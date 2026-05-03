@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+
+
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B2C3D4-E5F6-4789-B0C1-D2E3F4A5B6C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PharmaBilling</RootNamespace>
+    <AssemblyName>PharmaBilling</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>Libs\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\DashboardWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\SaleWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\SearchMedicineWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\MedicineWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\SupplierWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\CustomerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\AccountingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\ReportWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\PurchaseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\ChangePasswordWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\AddMedicineWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\AddCustomerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\AddPurchaseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\AddSupplierWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\InvoiceWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Styles\ModernUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\DashboardUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\MedicineUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\SaleUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\SaleTabsUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\AccountingUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\ReportUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\PurchaseUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\CustomerUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\SupplierUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\BackupUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\ChangePasswordUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\SettingsUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\LicenseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\AnalysisUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\PurchaseReturnWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\LoosePurchaseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\OpeningPurchaseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\SaleReturnWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\StaffUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\AddStaffWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\NetworkConfigWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\UsersUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\Views\AddUserWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Data\DbHelper.cs" />
+    <Compile Include="Source\Data\AppEvents.cs" />
+    <Compile Include="Source\Data\CloudSyncService.cs" />
+    <Compile Include="Source\Data\AppCache.cs" />
+    <Compile Include="Source\Data\ApiClient.cs" />
+    <Compile Include="Source\Network\MedixaLanServer.cs" />
+    <Compile Include="Source\Network\MedixaLanClient.cs" />
+    <Compile Include="Source\Models\Category.cs" />
+    <Compile Include="Source\Models\Customer.cs" />
+    <Compile Include="Source\Models\Ledger.cs" />
+    <Compile Include="Source\Models\Medicine.cs" />
+    <Compile Include="Source\Models\Purchase.cs" />
+    <Compile Include="Source\Models\Sale.cs" />
+    <Compile Include="Source\Models\Stock.cs" />
+    <Compile Include="Source\Models\Supplier.cs" />
+    <Compile Include="Source\Models\Staff.cs" />
+    <Compile Include="Source\Models\User.cs" />
+    <Compile Include="Source\ViewModels\AccountingViewModel.cs" />
+    <Compile Include="Source\ViewModels\BaseViewModel.cs" />
+    <Compile Include="Source\ViewModels\DashboardViewModel.cs" />
+    <Compile Include="Source\ViewModels\MedicineViewModel.cs" />
+    <Compile Include="Source\ViewModels\ReportViewModel.cs" />
+    <Compile Include="Source\ViewModels\CustomerViewModel.cs" />
+    <Compile Include="Source\ViewModels\PurchaseItemViewModel.cs" />
+    <Compile Include="Source\ViewModels\UserViewModel.cs" />
+    <Compile Include="Source\Data\AppConfig.cs" />
+    <Compile Include="Source\Data\AppSession.cs" />
+    <Compile Include="Source\ViewModels\PurchaseViewModel.cs" />
+    <Compile Include="Source\ViewModels\SaleItemViewModel.cs" />
+    <Compile Include="Source\ViewModels\SaleViewModel.cs" />
+    <Compile Include="Source\ViewModels\StockViewModel.cs" />
+    <Compile Include="Source\ViewModels\SupplierViewModel.cs" />
+    <Compile Include="Source\ViewModels\AnalysisViewModel.cs" />
+    <Compile Include="Source\ViewModels\PurchaseReturnViewModel.cs" />
+    <Compile Include="Source\ViewModels\SaleReturnViewModel.cs" />
+    <Compile Include="Source\ViewModels\StaffViewModel.cs" />
+    <Compile Include="Source\Views\InvoiceWindow.xaml.cs">
+      <DependentUpon>InvoiceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\DashboardWindow.xaml.cs">
+      <DependentUpon>DashboardWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\MedicineWindow.xaml.cs">
+      <DependentUpon>MedicineWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\SaleWindow.xaml.cs">
+      <DependentUpon>SaleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\SearchMedicineWindow.xaml.cs">
+      <DependentUpon>SearchMedicineWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\SupplierWindow.xaml.cs">
+      <DependentUpon>SupplierWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\CustomerWindow.xaml.cs">
+      <DependentUpon>CustomerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\AccountingWindow.xaml.cs">
+      <DependentUpon>AccountingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\ReportWindow.xaml.cs">
+      <DependentUpon>ReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\PurchaseWindow.xaml.cs">
+      <DependentUpon>PurchaseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\ChangePasswordWindow.xaml.cs">
+      <DependentUpon>ChangePasswordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\AddMedicineWindow.xaml.cs">
+      <DependentUpon>AddMedicineWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\AddCustomerWindow.xaml.cs">
+      <DependentUpon>AddCustomerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\AddPurchaseWindow.xaml.cs">
+      <DependentUpon>AddPurchaseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\AddSupplierWindow.xaml.cs">
+      <DependentUpon>AddSupplierWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\DashboardUC.xaml.cs">
+      <DependentUpon>DashboardUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\MedicineUC.xaml.cs">
+      <DependentUpon>MedicineUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\SaleUC.xaml.cs">
+      <DependentUpon>SaleUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\SaleTabsUC.xaml.cs">
+      <DependentUpon>SaleTabsUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\AccountingUC.xaml.cs">
+      <DependentUpon>AccountingUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\ReportUC.xaml.cs">
+      <DependentUpon>ReportUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\PurchaseUC.xaml.cs">
+      <DependentUpon>PurchaseUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\CustomerUC.xaml.cs">
+      <DependentUpon>CustomerUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\SupplierUC.xaml.cs">
+      <DependentUpon>SupplierUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\BackupUC.xaml.cs">
+      <DependentUpon>BackupUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\ChangePasswordUC.xaml.cs">
+      <DependentUpon>ChangePasswordUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\SettingsUC.xaml.cs">
+      <DependentUpon>SettingsUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\LicenseWindow.xaml.cs">
+      <DependentUpon>LicenseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\AnalysisUC.xaml.cs">
+      <DependentUpon>AnalysisUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\PurchaseReturnWindow.xaml.cs">
+      <DependentUpon>PurchaseReturnWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\LoosePurchaseWindow.xaml.cs">
+      <DependentUpon>LoosePurchaseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\OpeningPurchaseWindow.xaml.cs">
+      <DependentUpon>OpeningPurchaseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\SaleReturnWindow.xaml.cs">
+      <DependentUpon>SaleReturnWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\StaffUC.xaml.cs">
+      <DependentUpon>StaffUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\AddStaffWindow.xaml.cs">
+      <DependentUpon>AddStaffWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\NetworkConfigWindow.xaml.cs">
+      <DependentUpon>NetworkConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\UsersUC.xaml.cs">
+      <DependentUpon>UsersUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\AddUserWindow.xaml.cs">
+      <DependentUpon>AddUserWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Source\Data\LicenseManager.cs" />
+    <Compile Include="Source\Data\BackupService.cs" />
+    <None Include="Source\Data\schema.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Libs\x64\e_sqlite3.dll">
+      <Link>x64\e_sqlite3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Libs\x86\e_sqlite3.dll">
+      <Link>x86\e_sqlite3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
+
+
+
+
+
+

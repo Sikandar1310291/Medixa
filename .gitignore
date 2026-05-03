@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+packages/
+Medixa_Setup_v1.0/
+PharmaServer.exe
+**/bin/
+**/obj/

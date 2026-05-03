@@ -1,0 +1,178 @@
+<Window x:Class="PharmaBilling.Source.Views.OpeningPurchaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Opening Stock Entry" Height="650" Width="1050"
+        WindowStartupLocation="CenterOwner" Background="#F8F9FA" KeyDown="Window_KeyDown">
+
+    <Window.Resources>
+        <Style x:Key="LblStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#7F8C8D"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Margin" Value="0,0,0,4"/>
+        </Style>
+        <Style x:Key="ActionBtn" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="18,10"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#16A085" Padding="18,14">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="📋" FontSize="22" Foreground="White" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                <StackPanel>
+                    <TextBlock Text="OPENING STOCK ENTRY" FontSize="16" FontWeight="Bold" Foreground="White"/>
+                    <TextBlock Text="Enter initial/opening stock when starting the system for the first time" FontSize="11" Foreground="#A2DDD0"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Controls -->
+        <Border Grid.Row="1" Background="White" Margin="15,15,15,8" Padding="18" CornerRadius="8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,12,0">
+                    <TextBlock Text="Reference No." Style="{StaticResource LblStyle}"/>
+                    <TextBox Text="{Binding InvoiceNo}" Padding="8" BorderBrush="#DDD" BorderThickness="1"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="0,0,12,0">
+                    <TextBlock Text="Opening Date" Style="{StaticResource LblStyle}"/>
+                    <DatePicker SelectedDate="{Binding PurchaseDate}" Padding="8" BorderBrush="#DDD" BorderThickness="1"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Search &amp; Add Medicine to Opening Stock" Style="{StaticResource LblStyle}"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <ComboBox Grid.Column="0" x:Name="cboMedicines" ItemsSource="{Binding FilteredMedicines}"
+                                  DisplayMemberPath="Name" IsEditable="True" IsTextSearchEnabled="False"
+                                  StaysOpenOnEdit="True" Padding="8" BorderBrush="#DDD" BorderThickness="1"
+                                  Margin="0,0,8,0" KeyUp="cboMedicines_KeyUp"
+                                  VirtualizingStackPanel.IsVirtualizing="True"
+                                  VirtualizingStackPanel.VirtualizationMode="Recycling"/>
+                        <Button Grid.Column="1" Content="+ Add" Padding="15,8" Background="#16A085"
+                                Foreground="White" FontWeight="Bold" BorderThickness="0"
+                                Cursor="Hand" Click="AddItem_Click"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Items Grid -->
+        <Border Grid.Row="2" Background="White" Margin="15,0,15,8" Padding="12" CornerRadius="8">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Background="#E8F8F5" CornerRadius="4" Padding="8,4" Margin="0,0,0,8">
+                    <TextBlock Text="📋 Opening Stock: No supplier required. Enter Packs × Pack Size to set initial inventory quantities." 
+                               FontSize="11" Foreground="#16A085" FontStyle="Italic"/>
+                </Border>
+                <DataGrid Grid.Row="1" ItemsSource="{Binding PurchaseItems}" AutoGenerateColumns="False"
+                          CanUserAddRows="False" GridLinesVisibility="Horizontal"
+                          Background="White" BorderBrush="#EEE" BorderThickness="1"
+                          AlternatingRowBackground="#FAFAFA" RowHeaderWidth="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Medicine" Binding="{Binding MedicineName}" IsReadOnly="True" Width="2*"/>
+                        <DataGridTextColumn Header="Packs" Binding="{Binding PacksStr, UpdateSourceTrigger=LostFocus}" Width="0.6*">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Foreground" Value="#2980B9"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Pack Size" Binding="{Binding PackSizeStr, UpdateSourceTrigger=LostFocus}" Width="0.7*">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Foreground" Value="#8E44AD"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Total Qty" Binding="{Binding QuantityStr}" IsReadOnly="True" Width="0.7*">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Foreground" Value="#27AE60"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Batch No" Binding="{Binding BatchNo, UpdateSourceTrigger=LostFocus}" Width="*"/>
+                        <DataGridTextColumn Header="Rack No" Binding="{Binding RackNo, UpdateSourceTrigger=LostFocus}" Width="0.8*"/>
+                        <DataGridTextColumn Header="Expiry" Binding="{Binding ExpiryDate, UpdateSourceTrigger=LostFocus}" Width="*"/>
+                        <DataGridTextColumn Header="TP" Binding="{Binding TPStr, UpdateSourceTrigger=LostFocus}" Width="0.8*"/>
+                        <DataGridTextColumn Header="Retail" Binding="{Binding RetailQtyStr, UpdateSourceTrigger=LostFocus}" Width="0.8*"/>
+                        <DataGridTextColumn Header="Total Value" Binding="{Binding TotalPrice, StringFormat=Rs. \{0:N2\}}" IsReadOnly="True" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Foreground" Value="#16A085"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn Width="55">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="✕" Background="#E74C3C" Foreground="White" FontWeight="Bold"
+                                            BorderThickness="0" Padding="6,3" Cursor="Hand" Click="RemoveItem_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+
+        <!-- Footer -->
+        <Border Grid.Row="3" Background="White" Margin="15,0,15,15" Padding="18,14" CornerRadius="8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Opacity="0.7">
+                    <TextBlock Text="💡 " FontSize="14"/>
+                    <TextBlock Text="Opening stock is recorded as 'Opening' purchase type. Ideal for initial inventory setup."
+                               Foreground="#7F8C8D" FontSize="11" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,20,0">
+                    <TextBlock Text="Total Value: " FontSize="16" FontWeight="Bold" Foreground="#2C3E50"/>
+                    <TextBlock Text="{Binding GrossTotal, StringFormat=Rs. \{0:N2\}}"
+                               FontSize="16" FontWeight="Bold" Foreground="#16A085"/>
+                </StackPanel>
+
+                <Button Grid.Column="2" Content="Cancel" Width="90" Margin="0,0,10,0"
+                        Background="#ECF0F1" Foreground="#2C3E50" Style="{StaticResource ActionBtn}"
+                        Click="Cancel_Click" IsCancel="True"/>
+                <Button Grid.Column="3" Content="✔ Save Opening Stock" Background="#16A085" Foreground="White"
+                        Style="{StaticResource ActionBtn}" Click="SavePurchase_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,60 @@
+<UserControl x:Class="PharmaBilling.Source.Views.StaffUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F4F7F6">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="0,0,0,15">
+            <TextBlock Text="HR &amp; Staff Management" FontSize="26" FontWeight="Bold" Foreground="#2C3E50" DockPanel.Dock="Left"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right">
+                <Button x:Name="btnAddStaff" Content="+ Register Staff" Width="140" Height="40" Background="#27AE60" Foreground="White" BorderThickness="0" Margin="0,0,10,0" Click="btnAddStaff_Click"/>
+                <Button x:Name="btnRefresh" Content="Refresh" Width="100" Height="40" Background="#34495E" Foreground="White" BorderThickness="0" Click="btnRefresh_Click"/>
+            </StackPanel>
+        </DockPanel>
+
+        <!-- Main Content Area -->
+        <Border Grid.Row="1" Background="White" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+            <Grid Margin="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" Text="Employee Roster &amp; Payroll" FontWeight="Bold" FontSize="16" Foreground="#555" Margin="0,0,0,10"/>
+                
+                <DataGrid EnableRowVirtualization="True" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="dgStaff" Grid.Row="1" ItemsSource="{Binding StaffList}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Background="White" BorderThickness="0" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#E0E0E0" RowHeight="40">
+                    <DataGrid.Resources>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#ECF0F1"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="Padding" Value="10,5"/>
+                            <Setter Property="Height" Value="40"/>
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding StaffID}" Width="60"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="150" FontWeight="SemiBold"/>
+                        <DataGridTextColumn Header="Designation" Binding="{Binding Designation}" Width="120"/>
+                        <DataGridTextColumn Header="Contact Number" Binding="{Binding Contact}" Width="120"/>
+                        <DataGridTextColumn Header="Base Salary" Binding="{Binding BaseSalary, StringFormat=Pkr {0:N2}}" Width="120" Foreground="#27AE60" FontWeight="Bold"/>
+
+                        <DataGridTemplateColumn Header="Payroll Actions" Width="200">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="Edit" Width="60" Height="25" Background="#F39C12" Foreground="White" BorderThickness="0" Margin="0,0,5,0" Click="EditStaff_Click"/>
+                                        <Button Content="Issue Salary" Width="90" Height="25" Background="#2980B9" Foreground="White" BorderThickness="0" Click="IssueSalary_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

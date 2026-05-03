@@ -1,0 +1,9 @@
+; The comment below contains SFX script commands
+Setup=Install_Medixa.bat
+Silent=0
+Overwrite=1
+Title=Medixa - Professional Pharmacy Billing System Setup
+Text
+{
+Thank you for choosing Medixa. This installer will set up the Pharmacy Billing System on your computer.
+}

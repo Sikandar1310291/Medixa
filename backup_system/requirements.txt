@@ -1,0 +1,12 @@
+# Medixa Pharmacy - 3-Layer Backup System
+# Python 3.8+ required
+# Install with: pip install -r requirements.txt
+
+# AES-256 Encryption
+pycryptodome==3.21.0
+
+# OneDrive / Microsoft Graph API (HTTP calls)
+requests==2.32.3
+
+# (Optional) For better date/time handling
+python-dateutil==2.9.0

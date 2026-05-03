@@ -1,0 +1,1 @@
+﻿[{"license_key":"PHARMA-12345-ABCDE","client_name":"First Medical Store","status":"Active","expiry_date":"2026-04-06"}]

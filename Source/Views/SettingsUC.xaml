@@ -1,0 +1,41 @@
+<UserControl x:Class="PharmaBilling.Source.Views.SettingsUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F4F7F6">
+    <Grid Margin="30">
+        <StackPanel MaxWidth="600" HorizontalAlignment="Left">
+            <TextBlock Text="Pharmacy Profile Settings" FontSize="24" FontWeight="Bold" Foreground="#2C3E50" Margin="0,0,0,20"/>
+            
+            <Border Background="White" CornerRadius="8" Padding="25">
+                
+                <StackPanel>
+                    <TextBlock Text="Pharmacy Name" FontWeight="SemiBold" Foreground="#7F8C8D" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtPharmacyName" Padding="10" Margin="0,0,0,20" BorderThickness="1" BorderBrush="#DDD" FontSize="14"/>
+                    
+                    <TextBlock Text="Pharmacy Tagline (Invoices)" FontWeight="SemiBold" Foreground="#7F8C8D" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtTagline" Padding="10" Margin="0,0,0,20" BorderThickness="1" BorderBrush="#DDD" FontSize="14"/>
+                    
+                    <TextBlock Text="Address" FontWeight="SemiBold" Foreground="#7F8C8D" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtAddress" Padding="10" Margin="0,0,0,20" BorderThickness="1" BorderBrush="#DDD" FontSize="14"/>
+
+                    <TextBlock Text="Contact Number" FontWeight="SemiBold" Foreground="#7F8C8D" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtContact" Padding="10" Margin="0,0,0,20" BorderThickness="1" BorderBrush="#DDD" FontSize="14"/>
+
+                    <TextBlock Text="Email Address" FontWeight="SemiBold" Foreground="#7F8C8D" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtEmail" Padding="10" Margin="0,0,0,30" BorderThickness="1" BorderBrush="#DDD" FontSize="14"/>
+                    
+                    <Button Content="Save Pharmacy Profile" Background="#2ECC71" Foreground="White" FontWeight="Bold" Padding="20,12" BorderThickness="0" Cursor="Hand" Click="SaveSettings_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+            </Border>
+            
+            <TextBlock Text="* Note: Changes will be applied to all newly generated invoices immediately." 
+                       Foreground="#95A5A6" FontSize="12" Margin="0,15,0,0" FontStyle="Italic"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

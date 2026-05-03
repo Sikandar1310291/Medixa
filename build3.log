@@ -1,0 +1,1021 @@
+Build started 4/3/2026 6:16:12 PM.
+Logging verbosity is set to: Detailed.     0>Process = "C:\Program Files\dotnet\dotnet.exe"
+       MSBuild executable path = "C:\Program Files\dotnet\sdk\10.0.101\MSBuild.dll"
+       Command line arguments = "C:\Program Files\dotnet\sdk\10.0.101\MSBuild.dll -maxcpucount --verbosity:m -tlp:default=auto --property:NuGetInteractive=true --restoreProperty:NuGetInteractive=true --restoreProperty:EnableDefaultCompileItems=false --restoreProperty:EnableDefaultEmbeddedResourceItems=false --restoreProperty:EnableDefaultNoneItems=false -fl -flp:logfile=build3.log -consoleloggerparameters:Summary -restore -distributedlogger:Microsoft.DotNet.Cli.Commands.MSBuild.MSBuildLogger,C:\Program Files\dotnet\sdk\10.0.101\dotnet.dll*Microsoft.DotNet.Cli.Commands.MSBuild.MSBuildForwardingLogger,C:\Program Files\dotnet\sdk\10.0.101\dotnet.dll -nologo"
+       Current directory = "C:\Users\ma516\OneDrive\Desktop\Pharma"
+       MSBuild version = "18.0.6+fad253f51"
+       Based on the Windows registry key LongPathsEnabled, the LongPaths feature is enabled.
+       Based on the Windows registry key VerifiedAndReputablePolicyState, SAC state = 0: turned off.
+       C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj(3,92): message : Property 'MSBuildExtensionsPath' with value 'C:\Program Files\dotnet\sdk\10.0.101\' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Current\Microsoft.Common.props(60,5): message : Property reassignment: $(MSBuildProjectExtensionsPath)="C:\Users\ma516\OneDrive\Desktop\Pharma\obj\" (previous value: "obj\") at C:\Program Files\dotnet\sdk\10.0.101\Current\Microsoft.Common.props (60,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Current\Microsoft.Common.props(84,119): message : Property 'MSBuildUserExtensionsPath' with value 'C:\Users\ma516\AppData\Local\Microsoft\MSBuild' expanded from the environment.
+       Assembly loaded during Evaluation: System.Threading.Tasks.Parallel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Threading.Tasks.Parallel.dll, MVID: c0c31281-a1da-475c-91e3-f539049c5ef1, AssemblyLoadContext: Default)
+       C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.CSharp.Core.targets(200,5): message : Property reassignment: $(CommandLineArgsForDesignTimeEvaluation)="-langversion:7.3 -define:DEBUG;TRACE" (previous value: "-langversion:7.3") at C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.CSharp.Core.targets (200,5)
+       Assembly loaded during Evaluation: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed (location: C:\Program Files\dotnet\sdk\10.0.101\Newtonsoft.Json.dll, MVID: 7e62198b-eab2-4380-bbac-29171862d1d8, AssemblyLoadContext: Default)
+       Assembly loaded during Evaluation: System.Linq.Expressions, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Linq.Expressions.dll, MVID: 7e240ccd-03a8-4f23-b531-211ac3f77e14, AssemblyLoadContext: Default)
+       Assembly loaded during Evaluation: System.ComponentModel.TypeConverter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.ComponentModel.TypeConverter.dll, MVID: 77457f4e-688b-4221-b27e-92aab5153f39, AssemblyLoadContext: Default)
+       Assembly loaded during Evaluation: System.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.ObjectModel.dll, MVID: 2465e4e2-f030-4764-8562-13914ec9fda3, AssemblyLoadContext: Default)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.props(117,5): message : Property reassignment: $(AvailablePlatforms)="Any CPU,x86,x64,ARM64" (previous value: "Any CPU,x86,x64") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.props (117,5)
+       Assembly loaded during Evaluation: System.Runtime.Numerics, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Runtime.Numerics.dll, MVID: 2efebce6-89c0-4a73-8fdb-4ca4d03b91e8, AssemblyLoadContext: Default)
+       Assembly loaded during Evaluation: Microsoft.Build.Utilities.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Build.Utilities.Core.dll, MVID: 0ce0dd4f-98bd-4767-bc61-9eb82d6f94a6, AssemblyLoadContext: Default)
+       Assembly loaded during Evaluation: System.Runtime.Serialization.Primitives, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Runtime.Serialization.Primitives.dll, MVID: ecfab76f-cf3b-4dfa-bd5a-f89982539174, AssemblyLoadContext: Default)
+       Assembly loaded during Evaluation: System.Runtime.Serialization.Formatters, Version=8.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Runtime.Serialization.Formatters.dll, MVID: 3bc1e276-8d18-4f17-872d-15fc71efabdb, AssemblyLoadContext: Default)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(175,5): message : Property reassignment: $(_DebugSymbolsProduced)="true" (previous value: "false") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (175,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(185,5): message : Property reassignment: $(_DocumentationFileProduced)="false" (previous value: "true") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (185,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(392,5): message : Property reassignment: $(MSBuildCopyMarkerName)="PharmaBi.F448D5AF" (previous value: "PharmaBilling.csproj") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (392,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(393,5): message : Property reassignment: $(MSBuildCopyMarkerName)="PharmaBi.F448D5AF.Up2Date" (previous value: "PharmaBi.F448D5AF") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (393,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(527,5): message : Property reassignment: $(ProcessorArchitecture)="msil" (previous value: "AnyCPU") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (527,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(580,5): message : Property reassignment: $(DelaySign)="" (previous value: "false") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (580,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(649,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};" (previous value: "{CandidateAssemblyFiles}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (649,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(650,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem}" (previous value: "{CandidateAssemblyFiles};") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (650,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(651,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (651,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(652,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (652,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(653,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (653,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(654,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (654,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(655,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (655,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(656,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC};{RawFileName}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (656,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(657,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC};{RawFileName};bin\Debug\" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC};{RawFileName}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (657,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(2606,5): message : Property 'LOCALAPPDATA' with value 'C:\Users\ma516\AppData\Local' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(3934,5): message : Property reassignment: $(_SGenGenerateSerializationAssembliesConfig)="Auto" (previous value: "") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (3934,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(3935,5): message : Property reassignment: $(_SGenGenerateSerializationAssembliesConfig)="Off" (previous value: "Auto") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (3935,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message : Property reassignment: $(_TargetsThatPrepareProjectReferences)="
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message :       AssignProjectConfiguration;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message :       _SplitProjectReferencesByFileExistence
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message :     " (previous value: "_SplitProjectReferencesByFileExistence") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (5146,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(6959,5): message : Property 'MSBuildExtensionsPath32' with value 'C:\Program Files\dotnet\sdk\10.0.101' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message : Property reassignment: $(ResolveReferencesDependsOn)="
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       BeforeResolveReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AssignProjectConfiguration;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       FindInvalidProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveNativeReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveAssemblyReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirects;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirectsUpdateAppConfig;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveComReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AfterResolveReferences
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :     ;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ImplicitlyExpandDesignTimeFacades
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :     " (previous value: "
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       BeforeResolveReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AssignProjectConfiguration;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       FindInvalidProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveNativeReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveAssemblyReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirects;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirectsUpdateAppConfig;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveComReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AfterResolveReferences
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :     ") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets (74,5)
+       The "NuGetInteractive" property is a global property, and cannot be modified.
+       Assembly loaded during Evaluation: System.Collections.NonGeneric, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Collections.NonGeneric.dll, MVID: 5048f4ab-dbd8-4b4b-9e0f-fa8f211354cf, AssemblyLoadContext: Default)
+       Overriding target "GetFrameworkPaths" in project "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" with target "GetFrameworkPaths" from project "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets".
+       The target "ResolveNuGetPackageAssets" listed in an AfterTargets attribute at "C:\Program Files\dotnet\sdk\10.0.101\Microsoft\Microsoft.NET.Build.Extensions\Microsoft.NET.Build.Extensions.ConflictResolution.targets (27,11)" does not exist in the project, and will be ignored.
+     1>Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" on node 1 (Restore target(s)).
+     1>Project file contains ToolsVersion="4.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="Current". For more information, please see http://go.microsoft.com/fwlink/?LinkId=293424.
+     1>Target "_LoadRestoreGraphEntryPoints" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_FilterRestoreGraphProjectInputItems" depends on it):
+     1>Done building target "_LoadRestoreGraphEntryPoints" in project "PharmaBilling.csproj".
+     1>Target "_FilterRestoreGraphProjectInputItems" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateRestoreGraph" depends on it):
+       Using "RemoveDuplicates" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "RemoveDuplicates"
+       Done executing task "RemoveDuplicates".
+       Using "MSBuild" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "MSBuild"
+         Global Properties:
+           ExcludeRestorePackageImports=true
+     0>C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj(3,92): message : Property 'MSBuildExtensionsPath' with value 'C:\Program Files\dotnet\sdk\10.0.101\' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Current\Microsoft.Common.props(60,5): message : Property reassignment: $(MSBuildProjectExtensionsPath)="C:\Users\ma516\OneDrive\Desktop\Pharma\obj\" (previous value: "obj\") at C:\Program Files\dotnet\sdk\10.0.101\Current\Microsoft.Common.props (60,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Current\Microsoft.Common.props(84,119): message : Property 'MSBuildUserExtensionsPath' with value 'C:\Users\ma516\AppData\Local\Microsoft\MSBuild' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.CSharp.Core.targets(200,5): message : Property reassignment: $(CommandLineArgsForDesignTimeEvaluation)="-langversion:7.3 -define:DEBUG;TRACE" (previous value: "-langversion:7.3") at C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.CSharp.Core.targets (200,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.props(117,5): message : Property reassignment: $(AvailablePlatforms)="Any CPU,x86,x64,ARM64" (previous value: "Any CPU,x86,x64") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.props (117,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(175,5): message : Property reassignment: $(_DebugSymbolsProduced)="true" (previous value: "false") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (175,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(185,5): message : Property reassignment: $(_DocumentationFileProduced)="false" (previous value: "true") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (185,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(392,5): message : Property reassignment: $(MSBuildCopyMarkerName)="PharmaBi.F448D5AF" (previous value: "PharmaBilling.csproj") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (392,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(393,5): message : Property reassignment: $(MSBuildCopyMarkerName)="PharmaBi.F448D5AF.Up2Date" (previous value: "PharmaBi.F448D5AF") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (393,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(527,5): message : Property reassignment: $(ProcessorArchitecture)="msil" (previous value: "AnyCPU") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (527,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(580,5): message : Property reassignment: $(DelaySign)="" (previous value: "false") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (580,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(649,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};" (previous value: "{CandidateAssemblyFiles}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (649,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(650,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem}" (previous value: "{CandidateAssemblyFiles};") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (650,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(651,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (651,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(652,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (652,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(653,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (653,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(654,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (654,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(655,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (655,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(656,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC};{RawFileName}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (656,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(657,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC};{RawFileName};bin\Debug\" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC};{RawFileName}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (657,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(2606,5): message : Property 'LOCALAPPDATA' with value 'C:\Users\ma516\AppData\Local' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(3934,5): message : Property reassignment: $(_SGenGenerateSerializationAssembliesConfig)="Auto" (previous value: "") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (3934,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(3935,5): message : Property reassignment: $(_SGenGenerateSerializationAssembliesConfig)="Off" (previous value: "Auto") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (3935,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message : Property reassignment: $(_TargetsThatPrepareProjectReferences)="
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message :       AssignProjectConfiguration;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message :       _SplitProjectReferencesByFileExistence
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message :     " (previous value: "_SplitProjectReferencesByFileExistence") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (5146,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(6959,5): message : Property 'MSBuildExtensionsPath32' with value 'C:\Program Files\dotnet\sdk\10.0.101' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message : Property reassignment: $(ResolveReferencesDependsOn)="
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       BeforeResolveReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AssignProjectConfiguration;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       FindInvalidProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveNativeReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveAssemblyReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirects;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirectsUpdateAppConfig;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveComReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AfterResolveReferences
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :     ;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ImplicitlyExpandDesignTimeFacades
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :     " (previous value: "
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       BeforeResolveReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AssignProjectConfiguration;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       FindInvalidProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveNativeReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveAssemblyReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirects;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirectsUpdateAppConfig;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveComReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AfterResolveReferences
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :     ") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets (74,5)
+       The "NuGetInteractive" property is a global property, and cannot be modified.
+       Overriding target "GetFrameworkPaths" in project "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" with target "GetFrameworkPaths" from project "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets".
+       The target "ResolveNuGetPackageAssets" listed in an AfterTargets attribute at "C:\Program Files\dotnet\sdk\10.0.101\Microsoft\Microsoft.NET.Build.Extensions\Microsoft.NET.Build.Extensions.ConflictResolution.targets (27,11)" does not exist in the project, and will be ignored.
+     1>Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (1) is building "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (1:2) on node 1 (_IsProjectRestoreSupported target(s)).
+   1:2>Project file contains ToolsVersion="4.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="Current". For more information, please see http://go.microsoft.com/fwlink/?LinkId=293424.
+   1:2>Target "_IsProjectRestoreSupported" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (entry point):
+   1:2>Done building target "_IsProjectRestoreSupported" in project "PharmaBilling.csproj".
+   1:2>Done Building Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (_IsProjectRestoreSupported target(s)).
+     1>Done executing task "MSBuild".
+       Assembly loaded during TaskRun: NuGet.Build.Tasks, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll, MVID: 1d7b2a50-0801-4407-864a-c0611e7b6f2d, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+       Assembly loaded during TaskRun: System.Reflection.Metadata, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Reflection.Metadata.dll, MVID: 3dffb579-478e-4936-a66f-3cf5f722eefe, AssemblyLoadContext: Default)
+       Assembly loaded during TaskRun: NuGet.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.Common.dll, MVID: e68f94a8-8ead-49da-8d66-ddbffff51250, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+       Assembly loaded during TaskRun: NuGet.Commands, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.Commands.dll, MVID: cf5dfc68-8202-4a78-a2e1-4e04847fc3ac, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+       Assembly loaded during TaskRun: NuGet.ProjectModel, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.ProjectModel.dll, MVID: 74e299f3-0a8a-48ce-b793-3c6caaf0a1df, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+       Using "WarnForInvalidProjectsTask" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll".
+       Task "WarnForInvalidProjectsTask"
+       Done executing task "WarnForInvalidProjectsTask".
+     1>Done building target "_FilterRestoreGraphProjectInputItems" in project "PharmaBilling.csproj".
+       Target "_FilterRestoreGraphProjectInputItems" skipped. Previously built successfully.
+     1>Target "_GetAllRestoreProjectPathItems" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateRestoreGraph" depends on it):
+       Using "NuGetMessageTask" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll".
+       Task "NuGetMessageTask"
+         Determining projects to restore...
+       Done executing task "NuGetMessageTask".
+       Task "MSBuild"
+         Global Properties:
+           ExcludeRestorePackageImports=true
+     1>Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (1) is building "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (1:3) on node 1 (_GenerateRestoreProjectPathWalk target(s)).
+   1:3>Project file contains ToolsVersion="4.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="Current". For more information, please see http://go.microsoft.com/fwlink/?LinkId=293424.
+   1:3>Target "_GenerateRestoreProjectPathItemsPerFramework" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateRestoreProjectPathItemsCurrentProject" depends on it):
+       Using "ConvertToAbsolutePath" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "ConvertToAbsolutePath"
+       Done executing task "ConvertToAbsolutePath".
+   1:3>Done building target "_GenerateRestoreProjectPathItemsPerFramework" in project "PharmaBilling.csproj".
+   1:3>Target "_GenerateRestoreProjectPathItemsCurrentProject" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateRestoreProjectPathItems" depends on it):
+   1:3>Done building target "_GenerateRestoreProjectPathItemsCurrentProject" in project "PharmaBilling.csproj".
+   1:3>Target "_GenerateRestoreProjectPathItems" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateRestoreProjectPathWalk" depends on it):
+       Task "RemoveDuplicates"
+       Done executing task "RemoveDuplicates".
+   1:3>Done building target "_GenerateRestoreProjectPathItems" in project "PharmaBilling.csproj".
+   1:3>Target "_GenerateRestoreProjectPathWalk" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (entry point):
+       Task "MSBuild"
+       Done executing task "MSBuild".
+       Task "RemoveDuplicates"
+       Done executing task "RemoveDuplicates".
+   1:3>Done building target "_GenerateRestoreProjectPathWalk" in project "PharmaBilling.csproj".
+   1:3>Done Building Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (_GenerateRestoreProjectPathWalk target(s)).
+     1>Done executing task "MSBuild".
+       Task "RemoveDuplicates"
+       Done executing task "RemoveDuplicates".
+       Task "MSBuild"
+         Global Properties:
+           ExcludeRestorePackageImports=true
+     1>Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (1) is building "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (1:4) on node 1 (_IsProjectRestoreSupported target(s)).
+   1:4>Target "_IsProjectRestoreSupported" skipped. Previously built successfully.
+   1:4>Done Building Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (_IsProjectRestoreSupported target(s)).
+     1>Done executing task "MSBuild".
+     1>Done building target "_GetAllRestoreProjectPathItems" in project "PharmaBilling.csproj".
+     1>Target "_GenerateRestoreGraph" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "Restore" depends on it):
+       Using "Message" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "Message"
+         Generating dg file
+       Done executing task "Message".
+       Task "Message"
+         C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj
+       Done executing task "Message".
+       Task "MSBuild"
+         Global Properties:
+           ExcludeRestorePackageImports=true
+     1>Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (1) is building "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (1:5) on node 1 (_GenerateRestoreGraphProjectEntry target(s)).
+   1:5>Project file contains ToolsVersion="4.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="Current". For more information, please see http://go.microsoft.com/fwlink/?LinkId=293424.
+   1:5>Target "CollectPackageReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GetRestoreProjectStyle" depends on it):
+       Using "CheckForDuplicateNuGetItemsTask" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll".
+       Task "CheckForDuplicateNuGetItemsTask"
+       Done executing task "CheckForDuplicateNuGetItemsTask".
+   1:5>Done building target "CollectPackageReferences" in project "PharmaBilling.csproj".
+   1:5>Target "_GetRestoreProjectStyle" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateRestoreSpecs" depends on it):
+       Using "GetRestoreProjectStyleTask" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll".
+       Task "GetRestoreProjectStyleTask"
+         Assembly loaded during TaskRun (NuGet.Build.Tasks.GetRestoreProjectStyleTask): NuGet.Configuration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.Configuration.dll, MVID: 48b0ca1c-220b-4c21-8fab-d2d14e375158, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+       Done executing task "GetRestoreProjectStyleTask".
+   1:5>Done building target "_GetRestoreProjectStyle" in project "PharmaBilling.csproj".
+   1:5>Target "_GenerateRestoreSpecs" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateRestoreGraphProjectEntry" depends on it):
+       Task "Message"
+         Restore entry point C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj
+       Done executing task "Message".
+   1:5>Done building target "_GenerateRestoreSpecs" in project "PharmaBilling.csproj".
+   1:5>Target "_GenerateDotnetCliToolReferenceSpecs" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateRestoreGraphProjectEntry" depends on it):
+       Using "GetRestoreDotnetCliToolsTask" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll".
+       Task "GetRestoreDotnetCliToolsTask"
+       Done executing task "GetRestoreDotnetCliToolsTask".
+   1:5>Done building target "_GenerateDotnetCliToolReferenceSpecs" in project "PharmaBilling.csproj".
+   1:5>Target "_GenerateRestoreGraphProjectEntry" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (entry point):
+   1:5>Done building target "_GenerateRestoreGraphProjectEntry" in project "PharmaBilling.csproj".
+   1:5>Done Building Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (_GenerateRestoreGraphProjectEntry target(s)).
+     1>Done executing task "MSBuild".
+       Task "MSBuild"
+         Global Properties:
+           ExcludeRestorePackageImports=true
+     1>Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (1) is building "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (1:6) on node 1 (_GenerateProjectRestoreGraph target(s)).
+   1:6>Project file contains ToolsVersion="4.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="Current". For more information, please see http://go.microsoft.com/fwlink/?LinkId=293424.
+       Target "_GetRestoreProjectStyle" skipped. Previously built successfully.
+       Target "_GetRestoreProjectStyle" skipped. Previously built successfully.
+       Target "_GetRestoreProjectStyle" skipped. Previously built successfully.
+   1:6>Target "_GetRestoreTargetFrameworkOverride" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GetRestoreTargetFrameworksOutput" depends on it):
+   1:6>Done building target "_GetRestoreTargetFrameworkOverride" in project "PharmaBilling.csproj".
+   1:6>Target "_GetRestoreTargetFrameworksOutput" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateRestoreProjectSpec" depends on it):
+       Using "GetProjectTargetFrameworksTask" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll".
+       Task "GetProjectTargetFrameworksTask"
+         Assembly loaded during TaskRun (NuGet.Build.Tasks.GetProjectTargetFrameworksTask): NuGet.Frameworks, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.Frameworks.dll, MVID: e913a35d-983d-474c-b844-7b99e57f87c3, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+       Done executing task "GetProjectTargetFrameworksTask".
+   1:6>Done building target "_GetRestoreTargetFrameworksOutput" in project "PharmaBilling.csproj".
+   1:6>Target "_GenerateRestoreProjectSpec" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateProjectRestoreGraph" depends on it):
+   1:6>Done building target "_GenerateRestoreProjectSpec" in project "PharmaBilling.csproj".
+       Target "_GetRestoreProjectStyle" skipped. Previously built successfully.
+       Target "CollectPackageReferences" skipped. Previously built successfully.
+   1:6>Target "CollectPackageDownloads" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_CollectRestoreInputs" depends on it):
+       Task "CheckForDuplicateNuGetItemsTask"
+       Done executing task "CheckForDuplicateNuGetItemsTask".
+   1:6>Done building target "CollectPackageDownloads" in project "PharmaBilling.csproj".
+   1:6>Target "CollectFrameworkReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_CollectRestoreInputs" depends on it):
+   1:6>Done building target "CollectFrameworkReferences" in project "PharmaBilling.csproj".
+   1:6>Target "CollectCentralPackageVersions" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_CollectRestoreInputs" depends on it):
+       Task "CheckForDuplicateNuGetItemsTask"
+       Done executing task "CheckForDuplicateNuGetItemsTask".
+   1:6>Done building target "CollectCentralPackageVersions" in project "PharmaBilling.csproj".
+   1:6>Target "CollectNuGetAuditSuppressions" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_CollectRestoreInputs" depends on it):
+       Task "CheckForDuplicateNuGetItemsTask"
+       Done executing task "CheckForDuplicateNuGetItemsTask".
+   1:6>Done building target "CollectNuGetAuditSuppressions" in project "PharmaBilling.csproj".
+   1:6>Target "CollectPrunePackageReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_CollectRestoreInputs" depends on it):
+       Task "CheckForDuplicateNuGetItemsTask"
+       Done executing task "CheckForDuplicateNuGetItemsTask".
+   1:6>Done building target "CollectPrunePackageReferences" in project "PharmaBilling.csproj".
+   1:6>Target "_CollectRestoreInputs" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateProjectRestoreGraphPerFramework" depends on it):
+   1:6>Done building target "_CollectRestoreInputs" in project "PharmaBilling.csproj".
+   1:6>Target "_GenerateProjectRestoreGraphPerFramework" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateProjectRestoreGraphCurrentProject" depends on it):
+       Using "GetRestoreProjectReferencesTask" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll".
+       Task "GetRestoreProjectReferencesTask"
+       Done executing task "GetRestoreProjectReferencesTask".
+       Using "GetRestoreNuGetAuditSuppressionsTask" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll".
+       Task "GetRestoreNuGetAuditSuppressionsTask"
+       Done executing task "GetRestoreNuGetAuditSuppressionsTask".
+       Using "GetRestorePrunePackageReferencesTask" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll".
+       Task "GetRestorePrunePackageReferencesTask"
+       Done executing task "GetRestorePrunePackageReferencesTask".
+   1:6>Done building target "_GenerateProjectRestoreGraphPerFramework" in project "PharmaBilling.csproj".
+   1:6>Target "_GenerateProjectRestoreGraphCurrentProject" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateRestoreDependencies" depends on it):
+   1:6>Done building target "_GenerateProjectRestoreGraphCurrentProject" in project "PharmaBilling.csproj".
+   1:6>Target "_GenerateRestoreDependencies" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GenerateProjectRestoreGraph" depends on it):
+   1:6>Done building target "_GenerateRestoreDependencies" in project "PharmaBilling.csproj".
+   1:6>Target "_GenerateProjectRestoreGraph" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (entry point):
+   1:6>Done building target "_GenerateProjectRestoreGraph" in project "PharmaBilling.csproj".
+   1:6>Done Building Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (_GenerateProjectRestoreGraph target(s)).
+     1>Done executing task "MSBuild".
+     1>Done building target "_GenerateRestoreGraph" in project "PharmaBilling.csproj".
+     1>Target "Restore" in file "C:\Program Files\dotnet\sdk\10.0.101\NuGet.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (entry point):
+       Task "RemoveDuplicates"
+       Done executing task "RemoveDuplicates".
+       Using "RestoreTask" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll".
+       Task "RestoreTask"
+         Assembly loaded during TaskRun (NuGet.Build.Tasks.RestoreTask): NuGet.Packaging, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.Packaging.dll, MVID: cbfc9ed0-7866-469b-9c1f-f25d50faee97, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+         Assembly loaded during TaskRun (NuGet.Build.Tasks.RestoreTask): NuGet.LibraryModel, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.LibraryModel.dll, MVID: 68a4d051-6665-4b74-809a-7f38ce15fd8b, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+         Assembly loaded during TaskRun (NuGet.Build.Tasks.RestoreTask): NuGet.Versioning, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.Versioning.dll, MVID: db6fa9f4-313d-4c04-8b3b-dcde2ca3467c, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+         Assembly loaded during TaskRun (NuGet.Build.Tasks.RestoreTask): NuGet.Protocol, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.Protocol.dll, MVID: b29fe50d-16a8-4275-9f03-4c61a549b3e9, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+         Assembly loaded during TaskRun (NuGet.Build.Tasks.RestoreTask): NuGet.Credentials, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.Credentials.dll, MVID: a9f47e63-9cf1-4e3d-a1ac-19ffa2efaf93, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+         X.509 certificate chain validation will use the default trust store selected by .NET for code signing.
+         X.509 certificate chain validation will use the default trust store selected by .NET for timestamping.
+         Assembly loaded during TaskRun (NuGet.Build.Tasks.RestoreTask): NuGet.DependencyResolver.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.DependencyResolver.Core.dll, MVID: 56b6dee4-cc63-4485-beb0-97d06d74b4ea, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\sdk\10.0.101\NuGet.Build.Tasks.dll)
+         Nothing to do. None of the projects specified contain packages to restore.
+       Done executing task "RestoreTask".
+     1>Done building target "Restore" in project "PharmaBilling.csproj".
+     1>Done Building Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (Restore target(s)).
+     0>C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj(3,92): message : Property 'MSBuildExtensionsPath' with value 'C:\Program Files\dotnet\sdk\10.0.101\' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Current\Microsoft.Common.props(60,5): message : Property reassignment: $(MSBuildProjectExtensionsPath)="C:\Users\ma516\OneDrive\Desktop\Pharma\obj\" (previous value: "obj\") at C:\Program Files\dotnet\sdk\10.0.101\Current\Microsoft.Common.props (60,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Current\Microsoft.Common.props(84,119): message : Property 'MSBuildUserExtensionsPath' with value 'C:\Users\ma516\AppData\Local\Microsoft\MSBuild' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.CSharp.Core.targets(200,5): message : Property reassignment: $(CommandLineArgsForDesignTimeEvaluation)="-langversion:7.3 -define:DEBUG;TRACE" (previous value: "-langversion:7.3") at C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.CSharp.Core.targets (200,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.props(117,5): message : Property reassignment: $(AvailablePlatforms)="Any CPU,x86,x64,ARM64" (previous value: "Any CPU,x86,x64") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.props (117,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(175,5): message : Property reassignment: $(_DebugSymbolsProduced)="true" (previous value: "false") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (175,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(185,5): message : Property reassignment: $(_DocumentationFileProduced)="false" (previous value: "true") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (185,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(392,5): message : Property reassignment: $(MSBuildCopyMarkerName)="PharmaBi.F448D5AF" (previous value: "PharmaBilling.csproj") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (392,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(393,5): message : Property reassignment: $(MSBuildCopyMarkerName)="PharmaBi.F448D5AF.Up2Date" (previous value: "PharmaBi.F448D5AF") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (393,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(527,5): message : Property reassignment: $(ProcessorArchitecture)="msil" (previous value: "AnyCPU") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (527,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(580,5): message : Property reassignment: $(DelaySign)="" (previous value: "false") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (580,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(649,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};" (previous value: "{CandidateAssemblyFiles}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (649,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(650,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem}" (previous value: "{CandidateAssemblyFiles};") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (650,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(651,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (651,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(652,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (652,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(653,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (653,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(654,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (654,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(655,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (655,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(656,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC};{RawFileName}" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (656,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(657,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC};{RawFileName};bin\Debug\" (previous value: "{CandidateAssemblyFiles};;{HintPathFromItem};{TargetFrameworkDirectory};;{Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx};{AssemblyFolders};{GAC};{RawFileName}") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (657,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(2606,5): message : Property 'LOCALAPPDATA' with value 'C:\Users\ma516\AppData\Local' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(3934,5): message : Property reassignment: $(_SGenGenerateSerializationAssembliesConfig)="Auto" (previous value: "") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (3934,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(3935,5): message : Property reassignment: $(_SGenGenerateSerializationAssembliesConfig)="Off" (previous value: "Auto") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (3935,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message : Property reassignment: $(_TargetsThatPrepareProjectReferences)="
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message :       AssignProjectConfiguration;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message :       _SplitProjectReferencesByFileExistence
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(5146,5): message :     " (previous value: "_SplitProjectReferencesByFileExistence") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (5146,5)
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(6959,5): message : Property 'MSBuildExtensionsPath32' with value 'C:\Program Files\dotnet\sdk\10.0.101' expanded from the environment.
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message : Property reassignment: $(ResolveReferencesDependsOn)="
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       BeforeResolveReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AssignProjectConfiguration;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       FindInvalidProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveNativeReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveAssemblyReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirects;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirectsUpdateAppConfig;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveComReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AfterResolveReferences
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :     ;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ImplicitlyExpandDesignTimeFacades
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :     " (previous value: "
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       BeforeResolveReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AssignProjectConfiguration;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       FindInvalidProjectReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveNativeReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveAssemblyReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirects;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       GenerateBindingRedirectsUpdateAppConfig;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       ResolveComReferences;
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :       AfterResolveReferences
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets(74,5): message :     ") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets (74,5)
+       The "NuGetInteractive" property is a global property, and cannot be modified.
+       Overriding target "GetFrameworkPaths" in project "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" with target "GetFrameworkPaths" from project "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets".
+       The target "ResolveNuGetPackageAssets" listed in an AfterTargets attribute at "C:\Program Files\dotnet\sdk\10.0.101\Microsoft\Microsoft.NET.Build.Extensions\Microsoft.NET.Build.Extensions.ConflictResolution.targets (27,11)" does not exist in the project, and will be ignored.
+   1:7>Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" on node 1 (default targets).
+   1:7>Project file contains ToolsVersion="4.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="Current". For more information, please see http://go.microsoft.com/fwlink/?LinkId=293424.
+   1:7>Target "_CheckForInvalidConfigurationAndPlatform" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "BeforeBuild" depends on it):
+       Task "Message"
+         Configuration=Debug
+       Done executing task "Message".
+       Task "Message"
+         Platform=AnyCPU
+       Done executing task "Message".
+   1:7>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "PharmaBilling.csproj".
+   1:7>Target "BeforeBuild" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "Build" depends on it):
+   1:7>Done building target "BeforeBuild" in project "PharmaBilling.csproj".
+   1:7>Target "BuildOnlySettings" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "CoreBuild" depends on it):
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(1168,7): message : Property reassignment: $(BuildingProject)="true" (previous value: "false") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (1168,7) [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>Done building target "BuildOnlySettings" in project "PharmaBilling.csproj".
+   1:7>Target "GetFrameworkPaths" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "PrepareForBuild" depends on it):
+   1:7>Done building target "GetFrameworkPaths" in project "PharmaBilling.csproj".
+       Target "GetFrameworkPaths" skipped. Previously built successfully.
+   1:7>Target "GetReferenceAssemblyPaths" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "PrepareForBuild" depends on it):
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(1255,7): message : Property reassignment: $(TargetFrameworkDirectory)="" (previous value: "v4.0.30319") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (1255,7) [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+       Using "GetReferenceAssemblyPaths" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "GetReferenceAssemblyPaths"
+       Done executing task "GetReferenceAssemblyPaths".
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(1272,7): message : Property reassignment: $(TargetFrameworkDirectory)="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\;;" (previous value: "v4.0.30319") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (1272,7) [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+       C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets(1293,7): message : Property reassignment: $(TargetFrameworkDirectory)="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\;;;C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\Facades\" (previous value: "v4.0.30319") at C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets (1293,7) [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>Done building target "GetReferenceAssemblyPaths" in project "PharmaBilling.csproj".
+   1:7>Target "PrepareForBuild" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "CoreBuild" depends on it):
+       Using "FindAppConfigFile" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "FindAppConfigFile"
+       Done executing task "FindAppConfigFile".
+       Using "MakeDir" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "MakeDir"
+       Done executing task "MakeDir".
+   1:7>Done building target "PrepareForBuild" in project "PharmaBilling.csproj".
+   1:7>Target "BeforeResolveReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveReferences" depends on it):
+   1:7>Done building target "BeforeResolveReferences" in project "PharmaBilling.csproj".
+   1:7>Target "IgnoreJavaScriptOutputAssembly" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "AssignProjectConfiguration" depends on it):
+   1:7>Done building target "IgnoreJavaScriptOutputAssembly" in project "PharmaBilling.csproj".
+   1:7>Target "_SplitProjectReferencesByFileExistence" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "PrepareProjectReferences" depends on it):
+   1:7>Done building target "_SplitProjectReferencesByFileExistence" in project "PharmaBilling.csproj".
+   1:7>Target "_AddOutputPathToGlobalPropertiesToRemove" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_GetProjectReferenceTargetFrameworkProperties" depends on it):
+   1:7>Done building target "_AddOutputPathToGlobalPropertiesToRemove" in project "PharmaBilling.csproj".
+   1:7>Target "_GetProjectReferenceTargetFrameworkProperties" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "PrepareProjectReferences" depends on it):
+       Task "MSBuild"
+       Done executing task "MSBuild".
+       Using "SetRidAgnosticValueForProjects" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "SetRidAgnosticValueForProjects"
+       Done executing task "SetRidAgnosticValueForProjects".
+   1:7>Done building target "_GetProjectReferenceTargetFrameworkProperties" in project "PharmaBilling.csproj".
+   1:7>Target "PrepareProjectReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveProjectReferences" depends on it):
+   1:7>Done building target "PrepareProjectReferences" in project "PharmaBilling.csproj".
+   1:7>Target "ResolveProjectReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveReferences" depends on it):
+   1:7>Done building target "ResolveProjectReferences" in project "PharmaBilling.csproj".
+       Target "ResolveProjectReferences" skipped. Previously built successfully.
+       Target "GetFrameworkPaths" skipped. Previously built successfully.
+       Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
+       Target "PrepareForBuild" skipped. Previously built successfully.
+   1:7>Target "ResolveSDKReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveAssemblyReferences" depends on it):
+   1:7>Done building target "ResolveSDKReferences" in project "PharmaBilling.csproj".
+       Target "ResolveSDKReferences" skipped. Previously built successfully.
+   1:7>Target "ExpandSDKReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveAssemblyReferences" depends on it):
+   1:7>Done building target "ExpandSDKReferences" in project "PharmaBilling.csproj".
+   1:7>Target "ImplicitlyExpandNETStandardFacades" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft\Microsoft.NET.Build.Extensions\Microsoft.NET.Build.Extensions.NETFramework.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveAssemblyReferences" depends on it):
+   1:7>Done building target "ImplicitlyExpandNETStandardFacades" in project "PharmaBilling.csproj".
+       Target "GetFrameworkPaths" skipped. Previously built successfully.
+       Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
+   1:7>Target "_HandlePackageFileConflicts" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft\Microsoft.NET.Build.Extensions\Microsoft.NET.Build.Extensions.ConflictResolution.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveAssemblyReferences" depends on it):
+       Using "ResolvePackageFileConflicts" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\Microsoft\Microsoft.NET.Build.Extensions\\tools\net10.0\Microsoft.NET.Build.Extensions.Tasks.dll".
+       Task "ResolvePackageFileConflicts"
+       Done executing task "ResolvePackageFileConflicts".
+   1:7>Done building target "_HandlePackageFileConflicts" in project "PharmaBilling.csproj".
+   1:7>Target "ResolveAssemblyReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveReferences" depends on it):
+       Using "ResolveAssemblyReference" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "ResolveAssemblyReference"
+         TargetFrameworkMoniker:
+             .NETFramework,Version=v4.8
+         TargetFrameworkMonikerDisplayName:
+             .NET Framework 4.8
+         TargetedRuntimeVersion:
+             v
+         Assemblies:
+             System
+             System.Data
+             System.Xml
+             Microsoft.CSharp
+             System.Xml.Linq
+             System.Xaml
+             WindowsBase
+             PresentationCore
+             PresentationFramework
+             System.Data.SQLite
+                 HintPath = 'Libs\System.Data.SQLite.dll'
+             System.Core
+         AssemblyFiles:
+             C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll
+         CandidateAssemblyFiles:
+             Libs\x64\e_sqlite3.dll
+             Libs\x86\e_sqlite3.dll
+         TargetFrameworkDirectories:
+             C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\,C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\Facades\
+         NonCultureResourceDirectories:
+             
+         InstalledAssemblyTables:
+         IgnoreInstalledAssemblyTable:
+             False
+         SearchPaths:
+             {CandidateAssemblyFiles}
+             {HintPathFromItem}
+             {TargetFrameworkDirectory}
+             {Registry:Software\Microsoft\.NETFramework,v4.8,AssemblyFoldersEx}
+             {AssemblyFolders}
+             {GAC}
+             {RawFileName}
+             bin\Debug\
+         AllowedAssemblyExtensions:
+             .winmd
+             .dll
+             .exe
+         AllowedRelatedFileExtensions:
+             .pdb
+             .xml
+             .pri
+             .dll.config
+             .exe.config
+         AppConfigFile:
+             
+         AutoUnify:
+             True
+         EnableCustomCulture:
+             False
+         EnableCustomCulture:
+             False
+         CopyLocalDependenciesWhenParentReferenceInGac:
+             True
+         FindDependencies:
+             True
+         TargetProcessorArchitecture:
+             msil
+         StateFile:
+             obj\Debug\PharmaBilling.csproj.AssemblyReference.cache
+         InstalledAssemblySubsetTables:
+         IgnoreInstalledAssemblySubsetTable:
+             False
+         TargetFrameworkSubsets:
+         FullTargetFrameworkSubsetNames:
+             Full
+         ProfileName:
+             
+         FullFrameworkFolders:
+             C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\
+         LatestTargetFrameworkDirectories:
+         ProfileTablesLocation:
+         Primary reference "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll".
+             Reference found at search path location "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll".
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Primary reference "System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.winmd", but it didn't exist.
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Primary reference "System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.winmd", but it didn't exist.
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Primary reference "System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.winmd", but it didn't exist.
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Primary reference "Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\Microsoft.CSharp.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\Microsoft.CSharp.winmd", but it didn't exist.
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Primary reference "System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.Linq.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.Linq.winmd", but it didn't exist.
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Primary reference "System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xaml.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xaml.winmd", but it didn't exist.
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Primary reference "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\WindowsBase.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\WindowsBase.winmd", but it didn't exist.
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Primary reference "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationCore.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationCore.winmd", but it didn't exist.
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Primary reference "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationFramework.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationFramework.winmd", but it didn't exist.
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Primary reference "System.Data.SQLite, Version=2.0.2.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139".
+             Resolved file path is "C:\Users\ma516\OneDrive\Desktop\Pharma\Libs\System.Data.SQLite.dll".
+             Reference found at search path location "{HintPathFromItem}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Data.SQLite, Version=2.0.2.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Data.SQLite, Version=2.0.2.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139".
+         Primary reference "System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Core.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Core.winmd", but it didn't exist.
+             This reference is not "CopyLocal" because it's a prerequisite file.
+         Dependency "System.Transactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+             Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Transactions.dll".
+             Reference found at search path location "{TargetFrameworkDirectory}".
+                 For SearchPath "C:\Users\ma516\OneDrive\Desktop\Pharma\Libs" (added by referencing assembly "C:\Users\ma516\OneDrive\Desktop\Pharma\Libs\System.Data.SQLite.dll").
+                 Considered "C:\Users\ma516\OneDrive\Desktop\Pharma\Libs\System.Transactions.winmd", but it didn't exist.
+                 Considered "C:\Users\ma516\OneDrive\Desktop\Pharma\Libs\System.Transactions.dll", but it didn't exist.
+                 Considered "C:\Users\ma516\OneDrive\Desktop\Pharma\Libs\System.Transactions.exe", but it didn't exist.
+                 For SearchPath "{CandidateAssemblyFiles}".
+                 Considered "Libs\x64\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Transactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 Considered "Libs\x86\e_sqlite3.dll",
+         			but its name "e_sqlite3"
+         			didn't match the expected name "System.Transactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Transactions.winmd", but it didn't exist.
+             Required by "System.Data.SQLite".
+             This reference is not "CopyLocal" because it's a prerequisite file.
+       Done executing task "ResolveAssemblyReference".
+   1:7>Done building target "ResolveAssemblyReferences" in project "PharmaBilling.csproj".
+       Target "ResolveAssemblyReferences" skipped. Previously built successfully.
+   1:7>Target "_RemoveZipFileSuggestedRedirect" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft\Microsoft.NET.Build.Extensions\Microsoft.NET.Build.Extensions.NETFramework.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "GenerateBindingRedirects" depends on it):
+   1:7>Done building target "_RemoveZipFileSuggestedRedirect" in project "PharmaBilling.csproj".
+   1:7>Target "GenerateBindingRedirectsUpdateAppConfig" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveReferences" depends on it):
+   1:7>Done building target "GenerateBindingRedirectsUpdateAppConfig" in project "PharmaBilling.csproj".
+   1:7>Target "AfterResolveReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveReferences" depends on it):
+   1:7>Done building target "AfterResolveReferences" in project "PharmaBilling.csproj".
+       Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
+   1:7>Target "ImplicitlyExpandDesignTimeFacades" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.NETFramework.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResolveReferences" depends on it):
+   1:7>Done building target "ImplicitlyExpandDesignTimeFacades" in project "PharmaBilling.csproj".
+   1:7>Target "ResolveReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "CoreBuild" depends on it):
+   1:7>Done building target "ResolveReferences" in project "PharmaBilling.csproj".
+   1:7>Target "CopyAdditionalFiles" in file "C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.Managed.Core.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "AssignTargetPaths" depends on it):
+   1:7>Done building target "CopyAdditionalFiles" in project "PharmaBilling.csproj".
+   1:7>Target "AssignTargetPaths" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "PrepareResourceNames" depends on it):
+       Using "AssignTargetPath" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+   1:7>Done building target "AssignTargetPaths" in project "PharmaBilling.csproj".
+       Target "AssignTargetPaths" skipped. Previously built successfully.
+   1:7>Target "SplitResourcesByCulture" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "PrepareResourceNames" depends on it):
+       Using "AssignCulture" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "AssignCulture"
+       Done executing task "AssignCulture".
+   1:7>Done building target "SplitResourcesByCulture" in project "PharmaBilling.csproj".
+   1:7>Target "CreateCustomManifestResourceNames" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "PrepareResourceNames" depends on it):
+   1:7>Done building target "CreateCustomManifestResourceNames" in project "PharmaBilling.csproj".
+   1:7>Target "PrepareResourceNames" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "PrepareResources" depends on it):
+   1:7>Done building target "PrepareResourceNames" in project "PharmaBilling.csproj".
+       Target "ResolveAssemblyReferences" skipped. Previously built successfully.
+       Target "SplitResourcesByCulture" skipped. Previously built successfully.
+   1:7>Target "BeforeResGen" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResGen" depends on it):
+   1:7>Done building target "BeforeResGen" in project "PharmaBilling.csproj".
+       Target "ResolveReferences" skipped. Previously built successfully.
+   1:7>Target "FindReferenceAssembliesForReferences" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "CoreResGen" depends on it):
+   1:7>Done building target "FindReferenceAssembliesForReferences" in project "PharmaBilling.csproj".
+   1:7>Target "CoreResGen" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResGen" depends on it):
+   1:7>Done building target "CoreResGen" in project "PharmaBilling.csproj".
+   1:7>Target "AfterResGen" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "ResGen" depends on it):
+   1:7>Done building target "AfterResGen" in project "PharmaBilling.csproj".
+   1:7>Target "ResGen" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "PrepareResources" depends on it):
+   1:7>Done building target "ResGen" in project "PharmaBilling.csproj".
+   1:7>Target "PrepareResources" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "CoreBuild" depends on it):
+   1:7>Done building target "PrepareResources" in project "PharmaBilling.csproj".
+       Target "ResolveReferences" skipped. Previously built successfully.
+   1:7>Target "_SetEmbeddedWin32ManifestProperties" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "SetWin32ManifestProperties" depends on it):
+       Using "GetFrameworkPath" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "GetFrameworkPath"
+       Done executing task "GetFrameworkPath".
+   1:7>Done building target "_SetEmbeddedWin32ManifestProperties" in project "PharmaBilling.csproj".
+   1:7>Target "SetWin32ManifestProperties" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "Compile" depends on it):
+   1:7>Done building target "SetWin32ManifestProperties" in project "PharmaBilling.csproj".
+       Target "FindReferenceAssembliesForReferences" skipped. Previously built successfully.
+   1:7>Target "_GenerateCompileInputs" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "Compile" depends on it):
+   1:7>Done building target "_GenerateCompileInputs" in project "PharmaBilling.csproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+   1:7>Target "GenerateMSBuildEditorConfigFileShouldRun" in file "C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.Managed.Core.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "GenerateMSBuildEditorConfigFile" depends on it):
+   1:7>Done building target "GenerateMSBuildEditorConfigFileShouldRun" in project "PharmaBilling.csproj".
+   1:7>Target "GenerateMSBuildEditorConfigFile" in file "C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.Managed.Core.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "BeforeCompile" depends on it):
+   1:7>Done building target "GenerateMSBuildEditorConfigFile" in project "PharmaBilling.csproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
+   1:7>Target "_SetTargetFrameworkMonikerAttribute" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.CSharp.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "GenerateTargetFrameworkMonikerAttribute" depends on it):
+   1:7>Done building target "_SetTargetFrameworkMonikerAttribute" in project "PharmaBilling.csproj".
+   1:7>Target "GenerateTargetFrameworkMonikerAttribute" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "BeforeCompile" depends on it):
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       Input files: C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.targets
+       Output files: obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs
+   1:7>Done building target "GenerateTargetFrameworkMonikerAttribute" in project "PharmaBilling.csproj".
+   1:7>Target "BeforeCompile" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "Compile" depends on it):
+   1:7>Done building target "BeforeCompile" in project "PharmaBilling.csproj".
+       Target "ResolveAssemblyReferences" skipped. Previously built successfully.
+       Target "_GenerateCompileInputs" skipped. Previously built successfully.
+   1:7>Target "_GenerateCompileDependencyCache" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "Compile" depends on it):
+       Using "Hash" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "Hash"
+       Done executing task "Hash".
+       Using "WriteLinesToFile" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "WriteLinesToFile"
+         Skipping write to file "obj\Debug\PharmaBilling.csproj.CoreCompileInputs.cache" because content would not change.
+       Done executing task "WriteLinesToFile".
+   1:7>Done building target "_GenerateCompileDependencyCache" in project "PharmaBilling.csproj".
+   1:7>Target "_BeforeVBCSCoreCompile" in file "C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.Managed.Core.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "CoreCompile" depends on it):
+   1:7>Done building target "_BeforeVBCSCoreCompile" in project "PharmaBilling.csproj".
+   1:7>Target "_ComputeSkipAnalyzers" in file "C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.Managed.Core.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "CoreCompile" depends on it):
+   1:7>Done building target "_ComputeSkipAnalyzers" in project "PharmaBilling.csproj".
+   1:7>Target "CoreCompile" in file "C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.CSharp.Core.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "Compile" depends on it):
+       Building target "CoreCompile" completely.
+       Input file "Source\Data\DbHelper.cs" is newer than output file "obj\Debug\PharmaBilling.pdb".
+       Using "Csc" task from assembly "C:\Program Files\dotnet\sdk\10.0.101\Roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll".
+       Task "Csc"
+         Setting DOTNET_ROOT to 'C:\Program Files\dotnet'
+         Environment Variables passed to tool:
+           DOTNET_ROOT=C:\Program Files\dotnet
+         C:\Program Files\dotnet\sdk\10.0.101\Roslyn\bincore\csc.exe /noconfig /nowarn:1701,1702 /fullpaths /nostdlib+ /platform:AnyCPU /errorreport:prompt /warn:4 /define:DEBUG;TRACE /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\Microsoft.CSharp.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationCore.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationFramework.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.dll" /reference:C:\Users\ma516\OneDrive\Desktop\Pharma\Libs\System.Data.SQLite.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xaml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.Linq.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\WindowsBase.dll" /debug+ /debug:full /filealign:512 /optimize- /out:obj\Debug\PharmaBilling.exe /subsystemversion:6.00 /target:winexe /utf8output /langversion:7.3 App.xaml.cs MainWindow.xaml.cs Source\Data\DbHelper.cs Source\Models\Category.cs Source\Models\Customer.cs Source\Models\Ledger.cs Source\Models\Medicine.cs Source\Models\Purchase.cs Source\Models\Sale.cs Source\Models\Stock.cs Source\Models\Supplier.cs Source\ViewModels\AccountingViewModel.cs Source\ViewModels\BaseViewModel.cs Source\ViewModels\MedicineViewModel.cs Source\ViewModels\ReportViewModel.cs Source\ViewModels\SaleItemViewModel.cs Source\ViewModels\SaleViewModel.cs Source\ViewModels\StockViewModel.cs Source\Views\InvoiceWindow.xaml.cs Source\Views\DashboardWindow.xaml.cs Source\Views\LoginWindow.xaml.cs Source\Views\MedicineWindow.xaml.cs Source\Views\SaleWindow.xaml.cs Source\Views\SearchMedicineWindow.xaml.cs Source\Views\SupplierWindow.xaml.cs Source\Views\CustomerWindow.xaml.cs Source\Views\AccountingWindow.xaml.cs Source\Views\ReportWindow.xaml.cs Source\Views\PurchaseWindow.xaml.cs Source\Views\ChangePasswordWindow.xaml.cs Source\Views\AddMedicineWindow.xaml.cs "obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs"
+         Compilation request PharmaBilling, PathToTool=C:\Program Files\dotnet\sdk\10.0.101\Roslyn\bincore\csc.exe
+         CommandLine = ' /noconfig'
+         BuildResponseFile = '/nowarn:1701,1702 /fullpaths /nostdlib+ /platform:AnyCPU /errorreport:prompt /warn:4 /define:DEBUG;TRACE /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\Microsoft.CSharp.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationCore.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationFramework.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.dll" /reference:C:\Users\ma516\OneDrive\Desktop\Pharma\Libs\System.Data.SQLite.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xaml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.Linq.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\WindowsBase.dll" /debug+ /debug:full /filealign:512 /optimize- /out:obj\Debug\PharmaBilling.exe /subsystemversion:6.00 /target:winexe /utf8output /langversion:7.3 App.xaml.cs MainWindow.xaml.cs Source\Data\DbHelper.cs Source\Models\Category.cs Source\Models\Customer.cs Source\Models\Ledger.cs Source\Models\Medicine.cs Source\Models\Purchase.cs Source\Models\Sale.cs Source\Models\Stock.cs Source\Models\Supplier.cs Source\ViewModels\AccountingViewModel.cs Source\ViewModels\BaseViewModel.cs Source\ViewModels\MedicineViewModel.cs Source\ViewModels\ReportViewModel.cs Source\ViewModels\SaleItemViewModel.cs Source\ViewModels\SaleViewModel.cs Source\ViewModels\StockViewModel.cs Source\Views\InvoiceWindow.xaml.cs Source\Views\DashboardWindow.xaml.cs Source\Views\LoginWindow.xaml.cs Source\Views\MedicineWindow.xaml.cs Source\Views\SaleWindow.xaml.cs Source\Views\SearchMedicineWindow.xaml.cs Source\Views\SupplierWindow.xaml.cs Source\Views\CustomerWindow.xaml.cs Source\Views\AccountingWindow.xaml.cs Source\Views\ReportWindow.xaml.cs Source\Views\PurchaseWindow.xaml.cs Source\Views\ChangePasswordWindow.xaml.cs Source\Views\AddMedicineWindow.xaml.cs "obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs"'
+         Assembly loaded during TaskRun (Microsoft.CodeAnalysis.BuildTasks.Csc): System.IO.Pipes, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.IO.Pipes.dll, MVID: e7e51e92-ffa5-4700-bc91-2860dedad6a8, AssemblyLoadContext: Default)
+         Attempt to open named pipe '0M3xbykkI7U6JOTR1SSDP_Xwqyzh4LASZ_sZ1ju2pC4'
+         Attempt to connect named pipe '0M3xbykkI7U6JOTR1SSDP_Xwqyzh4LASZ_sZ1ju2pC4'
+         Assembly loaded during TaskRun (Microsoft.CodeAnalysis.BuildTasks.Csc): System.Security.AccessControl, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Security.AccessControl.dll, MVID: 22453100-b461-47c3-bff4-d88d0f363dee, AssemblyLoadContext: Default)
+         Named pipe '0M3xbykkI7U6JOTR1SSDP_Xwqyzh4LASZ_sZ1ju2pC4' connected
+         Begin writing request for PharmaBilling
+         End writing request for PharmaBilling
+         Begin reading response for PharmaBilling
+         Assembly loaded during TaskRun (Microsoft.CodeAnalysis.BuildTasks.Csc): NuGet.Frameworks, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: C:\Program Files\dotnet\sdk\10.0.101\NuGet.Frameworks.dll, MVID: e913a35d-983d-474c-b844-7b99e57f87c3, AssemblyLoadContext: Default)
+         Assembly loaded during TaskRun (Microsoft.CodeAnalysis.BuildTasks.Csc): System.Diagnostics.TraceSource, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Diagnostics.TraceSource.dll, MVID: fc8b7102-88bf-4670-947d-eceb9d37bfbb, AssemblyLoadContext: Default)
+         Assembly loaded during TaskRun (Microsoft.CodeAnalysis.BuildTasks.Csc): System.Data.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Data.Common.dll, MVID: f3b48bf2-658e-488a-9555-be80bc180722, AssemblyLoadContext: Default)
+         Assembly loaded during TaskRun (Microsoft.CodeAnalysis.BuildTasks.Csc): System.ComponentModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.ComponentModel.dll, MVID: d67e5840-0e58-4626-94a6-82d22e1a5c45, AssemblyLoadContext: Default)
+         Assembly loaded during TaskRun (Microsoft.CodeAnalysis.BuildTasks.Csc): System.Reflection.Emit.Lightweight, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Reflection.Emit.Lightweight.dll, MVID: 54ccc9db-0db2-483c-9249-13f28812d0da, AssemblyLoadContext: Default)
+         Assembly loaded during TaskRun (Microsoft.CodeAnalysis.BuildTasks.Csc): System.Reflection.Emit.ILGeneration, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Reflection.Emit.ILGeneration.dll, MVID: 89cc0fb1-7534-4cbe-bb6f-05a7e2856a66, AssemblyLoadContext: Default)
+         Assembly loaded during TaskRun (Microsoft.CodeAnalysis.BuildTasks.Csc): System.Reflection.Primitives, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.1\System.Reflection.Primitives.dll, MVID: eabd85f7-9632-491e-a34a-adfb84d9810e, AssemblyLoadContext: Default)
+         End reading response for PharmaBilling
+         Microsoft (R) Visual C# Compiler version 5.0.0-2.25569.105 (fad253f5)
+         Copyright (C) Microsoft Corporation. All rights reserved.
+   1:7>CSC : error CS5001: Program does not contain a static 'Main' method suitable for an entry point [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\MainWindow.xaml.cs(13,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(15,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\DashboardWindow.xaml.cs(10,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\LoginWindow.xaml.cs(12,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\MedicineWindow.xaml.cs(14,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SaleWindow.xaml.cs(17,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(22,13): error CS0103: The name 'txtTitle' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(23,13): error CS0103: The name 'txtName' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(24,13): error CS0103: The name 'cmbType' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(25,13): error CS0103: The name 'txtCategory' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(26,13): error CS0103: The name 'txtManufacturer' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(27,13): error CS0103: The name 'txtPurchasePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(28,13): error CS0103: The name 'txtSalePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(29,13): error CS0103: The name 'txtMinStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(30,13): error CS0103: The name 'txtInitialStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(31,13): error CS0103: The name 'txtBatchNo' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(32,13): error CS0103: The name 'txtBoxNo' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(33,13): error CS0103: The name 'txtBoxSize' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(34,13): error CS0103: The name 'btnSave' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(18,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(20,13): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(21,13): error CS0103: The name 'txtSearch' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\LoginWindow.xaml.cs(19,31): error CS0103: The name 'txtUsername' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\LoginWindow.xaml.cs(20,31): error CS0103: The name 'txtPassword' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SupplierWindow.xaml.cs(9,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\CustomerWindow.xaml.cs(9,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AccountingWindow.xaml.cs(11,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AccountingWindow.xaml.cs(13,13): error CS0103: The name 'accountingGrid' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(12,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\PurchaseWindow.xaml.cs(9,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ChangePasswordWindow.xaml.cs(14,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(18,13): error CS0103: The name 'reportTitle' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(19,13): error CS0103: The name 'reportGrid' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(24,13): error CS0103: The name 'reportTitle' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(25,13): error CS0103: The name 'reportGrid' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(30,13): error CS0103: The name 'reportTitle' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(31,13): error CS0103: The name 'reportGrid' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(36,13): error CS0103: The name 'reportTitle' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(37,13): error CS0103: The name 'reportGrid' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\DashboardWindow.xaml.cs(17,21): error CS0103: The name 'sideMenu' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\DashboardWindow.xaml.cs(17,41): error CS0103: The name 'sideMenu' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\DashboardWindow.xaml.cs(19,28): error CS0103: The name 'sideMenu' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ChangePasswordWindow.xaml.cs(20,30): error CS0103: The name 'txtCurrentPass' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ChangePasswordWindow.xaml.cs(21,30): error CS0103: The name 'txtNewPass' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ChangePasswordWindow.xaml.cs(22,30): error CS0103: The name 'txtConfirmPass' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(16,17): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(18,17): error CS0103: The name 'lblCustomerName' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(19,17): error CS0103: The name 'lblContact' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(20,17): error CS0103: The name 'lblInvoiceDate' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(21,17): error CS0103: The name 'lblInvoiceID' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(23,17): error CS0103: The name 'dgItems' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(25,17): error CS0103: The name 'lblGrossTotal' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(26,17): error CS0103: The name 'lblDiscount' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(27,17): error CS0103: The name 'lblGrandTotal' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(39,38): error CS0103: The name 'txtName' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(49,36): error CS0103: The name 'txtName' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(50,36): error CS0103: The name 'cmbType' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(51,40): error CS0103: The name 'txtCategory' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(52,44): error CS0103: The name 'txtManufacturer' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(54,66): error CS0103: The name 'txtPurchasePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(54,112): error CS0103: The name 'txtPurchasePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(55,62): error CS0103: The name 'txtSalePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(55,104): error CS0103: The name 'txtSalePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(56,61): error CS0103: The name 'txtMinStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(56,102): error CS0103: The name 'txtMinStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(57,63): error CS0103: The name 'txtInitialStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(57,107): error CS0103: The name 'txtInitialStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(58,39): error CS0103: The name 'txtBatchNo' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(59,37): error CS0103: The name 'txtBoxNo' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(60,52): error CS0103: The name 'txtBoxSize' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(31,28): error CS0103: The name 'txtSearch' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(34,17): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(43,17): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(43,21): error CS0103: The name 'btnPrint' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(53,25): error CS0103: The name 'btnPrint' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(65,28): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(83,17): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(84,21): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(86,21): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\ViewModels\SaleViewModel.cs(311,18): warning CS0219: The variable 'customerId' is assigned but its value is never used [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+   1:7>C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(11,22): warning CS0414: The field 'AddMedicineWindow._isEdit' is assigned but its value is never used [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         CompilerServer: server - server processed compilation - PharmaBilling
+       Done executing task "Csc" -- FAILED.
+   1:7>Done building target "CoreCompile" in project "PharmaBilling.csproj" -- FAILED.
+   1:7>Target "_CheckForCompileOutputs" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_CleanGetCurrentAndPriorFileWrites" depends on it):
+   1:7>Done building target "_CheckForCompileOutputs" in project "PharmaBilling.csproj".
+   1:7>Target "_CleanGetCurrentAndPriorFileWrites" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "_CleanRecordFileWrites" depends on it):
+       Using "ReadLinesFromFile" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "ReadLinesFromFile"
+       Done executing task "ReadLinesFromFile".
+       Task "ConvertToAbsolutePath"
+       Done executing task "ConvertToAbsolutePath".
+       Using "FindUnderPath" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "FindUnderPath"
+         Comparison path is "C:\Users\ma516\OneDrive\Desktop\Pharma".
+       Done executing task "FindUnderPath".
+       Task "FindUnderPath"
+         Comparison path is "bin\Debug\".
+       Done executing task "FindUnderPath".
+       Task "FindUnderPath"
+         Comparison path is "obj\Debug\".
+       Done executing task "FindUnderPath".
+       Task "RemoveDuplicates"
+       Done executing task "RemoveDuplicates".
+   1:7>Done building target "_CleanGetCurrentAndPriorFileWrites" in project "PharmaBilling.csproj".
+   1:7>Target "_CleanRecordFileWrites" in file "C:\Program Files\dotnet\sdk\10.0.101\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (target "CoreBuild" depends on it):
+       Task "RemoveDuplicates"
+       Done executing task "RemoveDuplicates".
+       Task "MakeDir"
+       Done executing task "MakeDir".
+       Task "WriteLinesToFile"
+         Skipping write to file "obj\Debug\PharmaBilling.csproj.FileListAbsolute.txt" because content would not change.
+       Done executing task "WriteLinesToFile".
+   1:7>Done building target "_CleanRecordFileWrites" in project "PharmaBilling.csproj".
+   1:7>Done Building Project "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+       "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (default target) (1:7) ->
+       (CoreCompile target) -> 
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\ViewModels\SaleViewModel.cs(311,18): warning CS0219: The variable 'customerId' is assigned but its value is never used [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(11,22): warning CS0414: The field 'AddMedicineWindow._isEdit' is assigned but its value is never used [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+
+
+       "C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj" (default target) (1:7) ->
+       (CoreCompile target) -> 
+         CSC : error CS5001: Program does not contain a static 'Main' method suitable for an entry point [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\MainWindow.xaml.cs(13,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(15,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\DashboardWindow.xaml.cs(10,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\LoginWindow.xaml.cs(12,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\MedicineWindow.xaml.cs(14,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SaleWindow.xaml.cs(17,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(22,13): error CS0103: The name 'txtTitle' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(23,13): error CS0103: The name 'txtName' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(24,13): error CS0103: The name 'cmbType' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(25,13): error CS0103: The name 'txtCategory' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(26,13): error CS0103: The name 'txtManufacturer' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(27,13): error CS0103: The name 'txtPurchasePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(28,13): error CS0103: The name 'txtSalePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(29,13): error CS0103: The name 'txtMinStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(30,13): error CS0103: The name 'txtInitialStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(31,13): error CS0103: The name 'txtBatchNo' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(32,13): error CS0103: The name 'txtBoxNo' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(33,13): error CS0103: The name 'txtBoxSize' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(34,13): error CS0103: The name 'btnSave' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(18,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(20,13): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(21,13): error CS0103: The name 'txtSearch' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\LoginWindow.xaml.cs(19,31): error CS0103: The name 'txtUsername' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\LoginWindow.xaml.cs(20,31): error CS0103: The name 'txtPassword' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SupplierWindow.xaml.cs(9,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\CustomerWindow.xaml.cs(9,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AccountingWindow.xaml.cs(11,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AccountingWindow.xaml.cs(13,13): error CS0103: The name 'accountingGrid' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(12,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\PurchaseWindow.xaml.cs(9,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ChangePasswordWindow.xaml.cs(14,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(18,13): error CS0103: The name 'reportTitle' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(19,13): error CS0103: The name 'reportGrid' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(24,13): error CS0103: The name 'reportTitle' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(25,13): error CS0103: The name 'reportGrid' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(30,13): error CS0103: The name 'reportTitle' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(31,13): error CS0103: The name 'reportGrid' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(36,13): error CS0103: The name 'reportTitle' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ReportWindow.xaml.cs(37,13): error CS0103: The name 'reportGrid' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\DashboardWindow.xaml.cs(17,21): error CS0103: The name 'sideMenu' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\DashboardWindow.xaml.cs(17,41): error CS0103: The name 'sideMenu' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\DashboardWindow.xaml.cs(19,28): error CS0103: The name 'sideMenu' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ChangePasswordWindow.xaml.cs(20,30): error CS0103: The name 'txtCurrentPass' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ChangePasswordWindow.xaml.cs(21,30): error CS0103: The name 'txtNewPass' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\ChangePasswordWindow.xaml.cs(22,30): error CS0103: The name 'txtConfirmPass' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(16,17): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(18,17): error CS0103: The name 'lblCustomerName' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(19,17): error CS0103: The name 'lblContact' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(20,17): error CS0103: The name 'lblInvoiceDate' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(21,17): error CS0103: The name 'lblInvoiceID' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(23,17): error CS0103: The name 'dgItems' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(25,17): error CS0103: The name 'lblGrossTotal' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(26,17): error CS0103: The name 'lblDiscount' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(27,17): error CS0103: The name 'lblGrandTotal' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(39,38): error CS0103: The name 'txtName' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(49,36): error CS0103: The name 'txtName' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(50,36): error CS0103: The name 'cmbType' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(51,40): error CS0103: The name 'txtCategory' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(52,44): error CS0103: The name 'txtManufacturer' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(54,66): error CS0103: The name 'txtPurchasePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(54,112): error CS0103: The name 'txtPurchasePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(55,62): error CS0103: The name 'txtSalePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(55,104): error CS0103: The name 'txtSalePrice' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(56,61): error CS0103: The name 'txtMinStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(56,102): error CS0103: The name 'txtMinStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(57,63): error CS0103: The name 'txtInitialStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(57,107): error CS0103: The name 'txtInitialStock' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(58,39): error CS0103: The name 'txtBatchNo' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(59,37): error CS0103: The name 'txtBoxNo' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\AddMedicineWindow.xaml.cs(60,52): error CS0103: The name 'txtBoxSize' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(31,28): error CS0103: The name 'txtSearch' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(34,17): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(43,17): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(43,21): error CS0103: The name 'btnPrint' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\InvoiceWindow.xaml.cs(53,25): error CS0103: The name 'btnPrint' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(65,28): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(83,17): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(84,21): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+         C:\Users\ma516\OneDrive\Desktop\Pharma\Source\Views\SearchMedicineWindow.xaml.cs(86,21): error CS0103: The name 'dgMedicines' does not exist in the current context [C:\Users\ma516\OneDrive\Desktop\Pharma\PharmaBilling.csproj]
+
+    2 Warning(s)
+    80 Error(s)
+
+Time Elapsed 00:00:00.94

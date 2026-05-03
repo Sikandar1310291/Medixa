@@ -1,0 +1,73 @@
+{
+  "_comment": "Medixa Pharmacy - Production Backup Configuration (v1.0)",
+
+  "pharmacy": {
+    "name": "Medixa Pharmacy",
+    "system": "PharmaBilling v4"
+  },
+
+  "database": {
+    "type": "sqlite",
+    "path": "C:\\Users\\ma516\\OneDrive\\Desktop\\Pharma\\PharmaDB.sqlite"
+  },
+
+  "layer1_local": {
+    "enabled": true,
+    "backup_dir": "C:\\Users\\ma516\\OneDrive\\Desktop\\Pharma\\backup_system\\local_backups",
+    "keep_last_n": 7,
+    "compress": true,
+    "encrypt": true
+  },
+
+  "layer2_drive": {
+    "enabled": true,
+    "target_drives": ["D:\\", "E:\\", "F:\\"],
+    "backup_folder_name": "MedixaBackups",
+    "keep_last_n": 14,
+    "retry_attempts": 3,
+    "retry_delay_seconds": 10,
+    "compress": true,
+    "encrypt": true
+  },
+
+  "layer3_onedrive": {
+    "enabled": true,
+    "remote_folder": "MedixaPharmacyBackups",
+    "keep_last_n": 30,
+    "compress": true,
+    "encrypt": true,
+    "client_id": "YOUR_AZURE_APP_CLIENT_ID",
+    "client_secret": "YOUR_AZURE_APP_CLIENT_SECRET",
+    "tenant_id": "common",
+    "redirect_uri": "http://localhost:8080",
+    "token_cache_file": "C:\\Users\\ma516\\OneDrive\\Desktop\\Pharma\\backup_system\\.token_cache.json"
+  },
+
+  "encryption": {
+    "algorithm": "AES-256-CBC",
+    "key_file": "C:\\Users\\ma516\\OneDrive\\Desktop\\Pharma\\backup_system\\.backup_key.key"
+  },
+
+  "schedule": {
+    "interval": "daily",
+    "time": "02:00",
+    "task_name": "MedixaPharmacyAutoBackup"
+  },
+
+  "notifications": {
+    "enabled": false,
+    "email": {
+      "smtp_host": "smtp.gmail.com",
+      "smtp_port": 587,
+      "sender_email": "your_email@gmail.com",
+      "sender_password": "your_app_password",
+      "recipient_email": "admin@pharmacy.com"
+    }
+  },
+
+  "logging": {
+    "log_dir": "C:\\Users\\ma516\\OneDrive\\Desktop\\Pharma\\backup_system\\logs",
+    "log_level": "INFO",
+    "keep_logs_days": 90
+  }
+}

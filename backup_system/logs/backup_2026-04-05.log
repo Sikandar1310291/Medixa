@@ -1,0 +1,35 @@
+2026-04-05 23:01:09 | INFO     | MedixaBackup | ======================================================================
+2026-04-05 23:01:09 | INFO     | MedixaBackup | MEDIXA PHARMACY BACKUP SYSTEM - Session Started
+2026-04-05 23:01:09 | INFO     | MedixaBackup | Log file: C:\Users\ma516\OneDrive\Desktop\Pharma\backup_system\logs\backup_2026-04-05.log
+2026-04-05 23:01:09 | INFO     | MedixaBackup | ======================================================================
+2026-04-05 23:01:09 | INFO     | MedixaBackup | New AES-256 encryption key generated: C:\Users\ma516\OneDrive\Desktop\Pharma\backup_system\.backup_key.key
+2026-04-05 23:01:09 | WARNING  | MedixaBackup | SECURITY: Back up your key file separately! Without it, encrypted backups CANNOT be restored.
+2026-04-05 23:01:09 | INFO     | MedixaBackup | [L1 LOCAL] ─── Starting Local Backup ───────────────────
+2026-04-05 23:01:09 | INFO     | MedixaBackup | [L1 LOCAL] Compressed: Medixa_Backup_20260405_230109.zip (34.3 KB)
+2026-04-05 23:01:09 | INFO     | MedixaBackup | [ENCRYPT] Medixa_Backup_20260405_230109.zip → Medixa_Backup_20260405_230109.zip.enc (34.3 KB)
+2026-04-05 23:01:09 | INFO     | MedixaBackup | [L1 LOCAL] ✅ Backup saved: Medixa_Backup_20260405_230109.zip.enc (34.3 KB)
+2026-04-05 23:01:09 | INFO     | MedixaBackup | [L1 LOCAL] Rotation complete — kept 1, deleted 0
+2026-04-05 23:01:45 | INFO     | MedixaBackup | ======================================================================
+2026-04-05 23:01:45 | INFO     | MedixaBackup | MEDIXA PHARMACY BACKUP SYSTEM - Session Started
+2026-04-05 23:01:45 | INFO     | MedixaBackup | Log file: C:\Users\ma516\OneDrive\Desktop\Pharma\backup_system\logs\backup_2026-04-05.log
+2026-04-05 23:01:45 | INFO     | MedixaBackup | ======================================================================
+2026-04-05 23:01:46 | DEBUG    | MedixaBackup | Encryption key loaded from file.
+2026-04-05 23:01:46 | INFO     | MedixaBackup | [L1 LOCAL] ─── Starting Local Backup ───────────────────
+2026-04-05 23:01:46 | DEBUG    | MedixaBackup | [L1 LOCAL] DB copied to temp: C:\Users\ma516\AppData\Local\Temp\medixa_tmp_qf954uok\PharmaDB.sqlite
+2026-04-05 23:01:46 | INFO     | MedixaBackup | [L1 LOCAL] Compressed: Medixa_Backup_20260405_230146.zip (34.3 KB)
+2026-04-05 23:01:46 | INFO     | MedixaBackup | [ENCRYPT] Medixa_Backup_20260405_230146.zip → Medixa_Backup_20260405_230146.zip.enc (34.3 KB)
+2026-04-05 23:01:46 | INFO     | MedixaBackup | [L1 LOCAL] ✅ Backup saved: Medixa_Backup_20260405_230146.zip.enc (34.3 KB)
+2026-04-05 23:01:46 | INFO     | MedixaBackup | [L1 LOCAL] Rotation complete — kept 2, deleted 0
+2026-04-05 23:04:55 | INFO     | MedixaBackup | ----------------------------------------------------------------------
+2026-04-05 23:04:55 | INFO     | MedixaBackup | MEDIXA PHARMACY BACKUP SYSTEM - Session Started
+2026-04-05 23:04:55 | INFO     | MedixaBackup | Log file: C:\Users\ma516\OneDrive\Desktop\Pharma\backup_system\logs\backup_2026-04-05.log
+2026-04-05 23:04:55 | INFO     | MedixaBackup | ----------------------------------------------------------------------
+2026-04-05 23:04:55 | INFO     | MedixaBackup | [L1 LOCAL] ─── Starting Local Backup ───────────────────
+2026-04-05 23:04:55 | INFO     | MedixaBackup | [L1 LOCAL] Compressed: Medixa_Backup_20260405_230455.zip (34.3 KB)
+2026-04-05 23:04:55 | INFO     | MedixaBackup | [ENCRYPT] Medixa_Backup_20260405_230455.zip → Medixa_Backup_20260405_230455.zip.enc (34.3 KB)
+2026-04-05 23:04:55 | INFO     | MedixaBackup | [L1 LOCAL] ✅ Backup saved: Medixa_Backup_20260405_230455.zip.enc (34.3 KB)
+2026-04-05 23:04:55 | INFO     | MedixaBackup | [L1 LOCAL] Rotation complete — kept 3, deleted 0
+2026-04-05 23:05:18 | INFO     | MedixaBackup | ----------------------------------------------------------------------
+2026-04-05 23:05:18 | INFO     | MedixaBackup | MEDIXA PHARMACY BACKUP SYSTEM - Session Started
+2026-04-05 23:05:18 | INFO     | MedixaBackup | Log file: C:\Users\ma516\OneDrive\Desktop\Pharma\backup_system\logs\backup_2026-04-05.log
+2026-04-05 23:05:18 | INFO     | MedixaBackup | ----------------------------------------------------------------------

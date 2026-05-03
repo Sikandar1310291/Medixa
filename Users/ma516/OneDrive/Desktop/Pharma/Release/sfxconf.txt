@@ -1,0 +1,7 @@
+Title=Medixa Pharmacy Installer
+Text=Installing Medixa Pharmacy System... Please wait.
+Path=C:\Medixa
+SavePath
+Overwrite=1
+Silent=1
+Shortcut=D, "Medixa.exe", "", "Medixa Pharmacy", "Medixa Pharmacy", "logo.ico"

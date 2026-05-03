@@ -1,0 +1,6 @@
+{
+  "mode": "server",
+  "serverIP": "localhost",
+  "serverPort": 5000,
+  "dbPath": "PharmaDB.sqlite"
+}

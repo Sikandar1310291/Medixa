@@ -1,0 +1,192 @@
+<Window x:Class="PharmaBilling.Source.Views.InvoiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Invoice" Height="700" Width="340"
+        WindowStartupLocation="CenterScreen" Background="White"
+        ResizeMode="NoResize"
+        KeyDown="Window_KeyDown">
+
+    <Window.Resources>
+        <!-- Dashed separator style for thermal look -->
+        <Style x:Key="DashSep" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Courier New"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,3"/>
+            <Setter Property="Foreground" Value="#333"/>
+        </Style>
+        <Style x:Key="LabelSmall" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Courier New"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="#333"/>
+        </Style>
+        <Style x:Key="LabelBold" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Courier New"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#111"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Scrollable Receipt Area -->
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel x:Name="receiptPanel" Width="300" HorizontalAlignment="Center" Margin="10,15,10,10" Background="White">
+
+                <!-- Pharmacy Header -->
+                <TextBlock x:Name="lblPharmacyName" Text="PHARMASOFT"
+                           FontFamily="Courier New" FontSize="16" FontWeight="Bold"
+                           HorizontalAlignment="Center" Foreground="#111"/>
+                <TextBlock x:Name="lblPharmacyTagline" Text="Providing Quality Healthcare"
+                           FontFamily="Courier New" FontSize="9"
+                           HorizontalAlignment="Center" Foreground="#555" Margin="0,2,0,0"/>
+                <TextBlock x:Name="lblPharmacyAddress" Text="Address: N/A"
+                           FontFamily="Courier New" FontSize="9"
+                           HorizontalAlignment="Center" Foreground="#555" TextWrapping="Wrap" TextAlignment="Center" Margin="0,2,0,0"/>
+                <TextBlock x:Name="lblPharmacyContact" Text="Contact: N/A"
+                           FontFamily="Courier New" FontSize="9"
+                           HorizontalAlignment="Center" Foreground="#555" Margin="0,1,0,0"/>
+                <TextBlock x:Name="lblPharmacyEmail" Text=""
+                           FontFamily="Courier New" FontSize="9"
+                           HorizontalAlignment="Center" Foreground="#555" Margin="0,1,0,2"/>
+
+                <!-- Separator -->
+                <TextBlock Text="- - - - - - - - - - - - - - - - - - - - - - - -" Style="{StaticResource DashSep}"/>
+
+                <!-- Invoice Meta -->
+                <Grid Margin="0,3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock x:Name="lblCustomerName" Text="Customer:" Style="{StaticResource LabelSmall}" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="lblContact"      Text="Contact:"  Style="{StaticResource LabelSmall}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                        <TextBlock x:Name="lblInvoiceDate" Text="Date:"    Style="{StaticResource LabelSmall}" TextAlignment="Right"/>
+                        <TextBlock x:Name="lblInvoiceID"   Text="Invoice:" Style="{StaticResource LabelSmall}" TextAlignment="Right"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Separator -->
+                <TextBlock Text="- - - - - - - - - - - - - - - - - - - - - - - -" Style="{StaticResource DashSep}"/>
+
+                <!-- Column Headers -->
+                <Grid Margin="0,2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Item"   Style="{StaticResource LabelBold}"/>
+                    <TextBlock Grid.Column="1" Text="Qty"    Style="{StaticResource LabelBold}" TextAlignment="Center"/>
+                    <TextBlock Grid.Column="2" Text="Rate"   Style="{StaticResource LabelBold}" TextAlignment="Right"/>
+                    <TextBlock Grid.Column="3" Text="Total"  Style="{StaticResource LabelBold}" TextAlignment="Right"/>
+                </Grid>
+
+                <TextBlock Text="- - - - - - - - - - - - - - - - - - - - - - - -" Style="{StaticResource DashSep}"/>
+
+                <!-- Items List -->
+                <ItemsControl x:Name="lstItems">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="45"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding MedicineName}"
+                                           FontFamily="Courier New" FontSize="9" TextWrapping="Wrap" Foreground="#111"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Quantity}"
+                                           FontFamily="Courier New" FontSize="9" TextAlignment="Center" Foreground="#111"/>
+                                <TextBlock Grid.Column="2" Text="{Binding UnitPrice, StringFormat=N2}"
+                                           FontFamily="Courier New" FontSize="9" TextAlignment="Right" Foreground="#111"/>
+                                <TextBlock Grid.Column="3" Text="{Binding TotalPrice, StringFormat=N2}"
+                                           FontFamily="Courier New" FontSize="9" TextAlignment="Right" Foreground="#111" FontWeight="Bold"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <!-- Separator -->
+                <TextBlock Text="- - - - - - - - - - - - - - - - - - - - - - - -" Style="{StaticResource DashSep}"/>
+
+                <!-- Totals -->
+                <Grid Margin="0,2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Gross Total:" Style="{StaticResource LabelSmall}"/>
+                    <TextBlock x:Name="lblGrossTotal" Grid.Row="0" Grid.Column="1" Text="0.00"
+                               Style="{StaticResource LabelSmall}" TextAlignment="Right"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Discount:" Style="{StaticResource LabelSmall}"/>
+                    <TextBlock x:Name="lblDiscount"    Grid.Row="1" Grid.Column="1" Text="0%"
+                               Style="{StaticResource LabelSmall}" TextAlignment="Right"/>
+                </Grid>
+
+                <TextBlock Text="= = = = = = = = = = = = = = = = = = = = = = = ="
+                           FontFamily="Courier New" FontSize="10" HorizontalAlignment="Center" Margin="0,3" Foreground="#111"/>
+
+                <!-- Grand Total -->
+                <Grid Margin="0,0,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="GRAND TOTAL:"
+                               FontFamily="Courier New" FontSize="12" FontWeight="Bold" Foreground="#111"/>
+                    <TextBlock x:Name="lblGrandTotal" Grid.Column="1" Text="Rs. 0.00"
+                               FontFamily="Courier New" FontSize="12" FontWeight="Bold" Foreground="#111" TextAlignment="Right"/>
+                </Grid>
+
+                <TextBlock Text="= = = = = = = = = = = = = = = = = = = = = = = ="
+                           FontFamily="Courier New" FontSize="10" HorizontalAlignment="Center" Margin="0,3" Foreground="#111"/>
+
+                <!-- FBR -->
+                <TextBlock Text="FBR POS Tracking ID:" Style="{StaticResource LabelSmall}" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                <TextBlock x:Name="lblFBR" Text="N/A"
+                           FontFamily="Courier New" FontSize="9" HorizontalAlignment="Center"
+                           Foreground="#555" TextWrapping="Wrap" TextAlignment="Center"/>
+
+                <!-- Thank You -->
+                <TextBlock Text="- - - - - - - - - - - - - - - - - - - - - - - -" Style="{StaticResource DashSep}" Margin="0,8,0,0"/>
+                <TextBlock Text="*** Thank you for your business! ***"
+                           FontFamily="Courier New" FontSize="9" FontStyle="Italic"
+                           HorizontalAlignment="Center" Foreground="#444" Margin="0,4,0,8"/>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Action Buttons (NOT printed) -->
+        <StackPanel x:Name="btnPanel" Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Center" Margin="10,8,10,12">
+            <Button x:Name="btnPrint" Content="🖨  Print (Enter)"
+                    Width="150" Height="36"
+                    Background="#1A73E8" Foreground="White" BorderThickness="0"
+                    FontWeight="Bold" FontSize="13" Cursor="Hand"
+                    IsDefault="True" Margin="0,0,10,0" Click="btnPrint_Click"/>
+            <Button Content="✕ Close (Esc)"
+                    Width="110" Height="36"
+                    Background="#E8EAED" Foreground="#333" BorderThickness="0"
+                    FontSize="12" Cursor="Hand"
+                    IsCancel="True" Click="btnClose_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,53 @@
+<Window x:Class="PharmaBilling.Source.Views.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Manage System User" SizeToContent="Height" Width="400"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Background="#FAFAFA" WindowStyle="ToolWindow">
+    <Border BorderThickness="1" BorderBrush="#E0E0E0" Background="White" Margin="10" CornerRadius="10">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="15" Color="LightGray" Opacity="0.4" ShadowDepth="2"/>
+        </Border.Effect>
+        <Grid Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Terminal User Details" FontSize="20" FontWeight="Bold" Foreground="#2C3E50" Margin="0,0,0,20"/>
+
+        <TextBlock Text="Login Username" FontWeight="SemiBold" Foreground="#34495E" Grid.Row="1" Margin="0,0,0,5"/>
+        <TextBox x:Name="txtUsername" Grid.Row="2" Height="35" Margin="0,0,0,15" Padding="10,0" VerticalContentAlignment="Center" BorderBrush="#BDC3C7">
+            <TextBox.Resources><Style TargetType="Border"><Setter Property="CornerRadius" Value="4"/></Style></TextBox.Resources>
+        </TextBox>
+
+        <TextBlock Text="Password" FontWeight="SemiBold" Foreground="#34495E" Grid.Row="3" Margin="0,0,0,5"/>
+        <TextBox x:Name="txtPassword" Grid.Row="4" Height="35" Margin="0,0,0,15" Padding="10,0" VerticalContentAlignment="Center" BorderBrush="#BDC3C7">
+            <TextBox.Resources><Style TargetType="Border"><Setter Property="CornerRadius" Value="4"/></Style></TextBox.Resources>
+        </TextBox>
+
+        <TextBlock Text="Security Role (Access Level)" FontWeight="SemiBold" Foreground="#34495E" Grid.Row="5" Margin="0,0,0,5"/>
+        <ComboBox x:Name="cmbRole" Grid.Row="6" Height="30" Margin="0,0,0,20" VerticalContentAlignment="Center" BorderBrush="#BDC3C7">
+            <ComboBoxItem Content="Cashier"/>
+            <ComboBoxItem Content="Admin"/>
+        </ComboBox>
+
+        <TextBlock Text="NOTE: The Cashier role instantly hides all application Configuration settings, Finance Ledgers, HR, and disables 'Delete' or 'Edit' actions across all forms." Grid.Row="7" FontSize="11" Foreground="#E74C3C" TextWrapping="Wrap" Margin="0,10,0,20" FontStyle="Italic"/>
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Save Credentials" Width="140" Height="40" Background="#27AE60" Foreground="White" FontWeight="Bold" BorderThickness="0" Margin="0,0,10,0" Click="Save_Click" Cursor="Hand">
+                <Button.Resources><Style TargetType="Border"><Setter Property="CornerRadius" Value="4"/></Style></Button.Resources>
+            </Button>
+            <Button Content="Cancel" Width="90" Height="40" Background="#BDC3C7" Foreground="Black" FontWeight="Bold" BorderThickness="0" Click="Cancel_Click" Cursor="Hand">
+                <Button.Resources><Style TargetType="Border"><Setter Property="CornerRadius" Value="4"/></Style></Button.Resources>
+            </Button>
+        </StackPanel>
+    </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,133 @@
+<UserControl x:Class="PharmaBilling.Source.Views.PurchaseUC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Background="#F4F7F6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="White" Padding="15" BorderBrush="#EEE" BorderThickness="0,0,0,1">
+            <Grid>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="PURCHASE ENTRIES" FontSize="16" FontWeight="Bold" Foreground="#2C3E50"/>
+                    <TextBlock Text="Manage all purchase types: Normal, Loose, Opening Stock, and Purchase Returns"
+                               FontSize="11" Foreground="#7F8C8D" Margin="0,2,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <!-- Opening Stock -->
+                    <Button x:Name="btnOpening" Content="📋 Opening Stock" 
+                            Background="#16A085" Foreground="White" BorderThickness="0"
+                            Padding="12,8" FontWeight="Bold" Cursor="Hand" Margin="0,0,8,0"
+                            Click="OpeningPurchase_Click" FontSize="12"/>
+                    <!-- Loose Purchase -->
+                    <Button x:Name="btnLoose" Content="⚖ Loose Purchase"
+                            Background="#8E44AD" Foreground="White" BorderThickness="0"
+                            Padding="12,8" FontWeight="Bold" Cursor="Hand" Margin="0,0,8,0"
+                            Click="LoosePurchase_Click" FontSize="12"/>
+                    <!-- Purchase Return -->
+                    <Button x:Name="btnReturn" Content="↩ Purchase Return"
+                            Background="#C0392B" Foreground="White" BorderThickness="0"
+                            Padding="12,8" FontWeight="Bold" Cursor="Hand" Margin="0,0,8,0"
+                            Click="PurchaseReturn_Click" FontSize="12"/>
+                    <!-- Add Normal Purchase -->
+                    <Button x:Name="btnAdd" Content="+ Add Purchase"
+                            Background="#2ECC71" Foreground="White" BorderThickness="0"
+                            Padding="12,8" FontWeight="Bold" Cursor="Hand"
+                            Click="AddPurchase_Click" FontSize="12"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Filter Tabs -->
+        <Border Grid.Row="1" Background="White" BorderBrush="#EEE" BorderThickness="0,0,0,1" Padding="15,8">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnTabAll" Content="All Purchases" Padding="12,6" Margin="0,0,6,0"
+                        Background="#2C3E50" Foreground="White" BorderThickness="0" Cursor="Hand"
+                        FontSize="11" Click="TabAll_Click"/>
+                <Button x:Name="btnTabNormal" Content="Normal" Padding="12,6" Margin="0,0,6,0"
+                        Background="#BDC3C7" Foreground="White" BorderThickness="0" Cursor="Hand"
+                        FontSize="11" Click="TabNormal_Click"/>
+                <Button x:Name="btnTabLoose" Content="Loose" Padding="12,6" Margin="0,0,6,0"
+                        Background="#BDC3C7" Foreground="White" BorderThickness="0" Cursor="Hand"
+                        FontSize="11" Click="TabLoose_Click"/>
+                <Button x:Name="btnTabOpening" Content="Opening Stock" Padding="12,6" Margin="0,0,6,0"
+                        Background="#BDC3C7" Foreground="White" BorderThickness="0" Cursor="Hand"
+                        FontSize="11" Click="TabOpening_Click"/>
+                <Button x:Name="btnTabReturns" Content="Purchase Returns" Padding="12,6" Margin="0,0,0,0"
+                        Background="#BDC3C7" Foreground="White" BorderThickness="0" Cursor="Hand"
+                        FontSize="11" Click="TabReturns_Click"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Main Content: Purchases List + Returns List -->
+        <Grid Grid.Row="2">
+            <!-- Normal/Loose/Opening Purchases DataGrid -->
+            <Border x:Name="pnlPurchases" Margin="15" Background="White" CornerRadius="8" Padding="10">
+                <DataGrid EnableRowVirtualization="True" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="dgPurchases" ItemsSource="{Binding PastPurchases}" AutoGenerateColumns="False"
+                          IsReadOnly="True" GridLinesVisibility="Horizontal" Background="White"
+                          AlternatingRowBackground="#F9F9F9" RowHeaderWidth="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding PurchaseID}" Width="55"/>
+                        <DataGridTextColumn Header="Invoice #" Binding="{Binding InvoiceNo}" Width="110"/>
+                        <DataGridTextColumn Header="Type" Binding="{Binding PurchaseType}" Width="90">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Supplier" Binding="{Binding SupplierName}" Width="120"/>
+                        <DataGridTextColumn Header="Purchased Items" Binding="{Binding Items}" Width="*"/>
+                        <DataGridTextColumn Header="Date" Binding="{Binding PurchaseDate}" Width="145"/>
+                        <DataGridTextColumn Header="Total Amount" Binding="{Binding TotalAmount}" Width="110"/>
+                        <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="80"/>
+                        <DataGridTemplateColumn Header="Action" Width="140">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="✏ Edit" Background="#3498DB" Foreground="White" BorderThickness="0" Padding="8,2" Cursor="Hand" Margin="0,0,5,0" Click="EditPurchase_Click"/>
+                                        <Button Content="Delete" Background="#E74C3C" Foreground="White" BorderThickness="0" Padding="5,2" Cursor="Hand" Click="DeletePurchase_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+
+            <!-- Purchase Returns DataGrid (hidden by default) -->
+            <Border x:Name="pnlReturns" Margin="15" Background="White" CornerRadius="8" Padding="10"
+                    Visibility="Collapsed">
+                <DataGrid EnableRowVirtualization="True" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="dgReturns" ItemsSource="{Binding PastPurchaseReturns}" AutoGenerateColumns="False"
+                          IsReadOnly="True" GridLinesVisibility="Horizontal" Background="White"
+                          AlternatingRowBackground="#FFF5F5" RowHeaderWidth="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Return ID" Binding="{Binding ReturnID}" Width="80"/>
+                        <DataGridTextColumn Header="Supplier" Binding="{Binding SupplierName}" Width="150"/>
+                        <DataGridTextColumn Header="Return Date" Binding="{Binding ReturnDate}" Width="145"/>
+                        <DataGridTextColumn Header="Reason" Binding="{Binding Reason}" Width="*"/>
+                        <DataGridTextColumn Header="Total Amount" Binding="{Binding TotalAmount}" Width="110">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="#C0392B"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="80"/>
+                        <DataGridTemplateColumn Header="Action" Width="70">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Delete" Background="#E74C3C" Foreground="White" BorderThickness="0" Padding="5,2" Cursor="Hand" Click="DeleteReturn_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

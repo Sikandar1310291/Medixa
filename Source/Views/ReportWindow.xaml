@@ -1,0 +1,183 @@
+<Window x:Class="PharmaBilling.Source.Views.ReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Medixa Reporting" Height="700" Width="1100" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!-- Shared Styles -->
+        <Style x:Key="PremiumButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="0,0,0,12"/>
+            <Setter Property="Background" Value="#34495E"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" CornerRadius="8" Background="{TemplateBinding Background}" BorderThickness="0" Padding="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#2980B9"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="PurchaseButtonStyle" TargetType="Button" BasedOn="{StaticResource PremiumButtonStyle}">
+            <Setter Property="Background" Value="#27AE60"/>
+        </Style>
+
+        <Style x:Key="FilterButtonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="0,0,8,0"/>
+            <Setter Property="Background" Value="#ECF0F1"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" CornerRadius="15" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#BDC3C7"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#F4F7F6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#2C3E50" Padding="20">
+            <StackPanel>
+                <TextBlock Text="REPORTS CENTER" Foreground="White" Opacity="0.7" FontSize="11" FontWeight="Bold" Margin="5,0,0,25" HorizontalAlignment="Center"/>
+                <Button Content="Daily Sales Report" Style="{StaticResource PremiumButtonStyle}" Click="SalesReport_Click"/>
+                <Button Content="Purchase Report" Style="{StaticResource PurchaseButtonStyle}" Click="PurchaseReport_Click"/>
+                <Separator Background="#444" Margin="0,10,0,20" Opacity="0.3"/>
+                <Button Content="Full Stock Report" Style="{StaticResource PremiumButtonStyle}" Click="StockReport_Click" Opacity="0.9"/>
+                <Button Content="Expired Medicine" Style="{StaticResource PremiumButtonStyle}" Click="ExpiredReport_Click" Opacity="0.9"/>
+                <Button Content="Low Stock Alerts"  Style="{StaticResource PremiumButtonStyle}" Click="LowStockReport_Click" Opacity="0.9"/>
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="White" Padding="20,15" BorderBrush="#EEE" BorderThickness="0,0,0,1">
+                <Grid>
+                    <TextBlock x:Name="reportTitle" Text="Report Preview" FontSize="18" FontWeight="Bold" Foreground="#34495E" VerticalAlignment="Center"/>
+
+                    <StackPanel x:Name="salesFilters" Orientation="Horizontal" HorizontalAlignment="Right" Visibility="Collapsed">
+                        <Button Content="Today" Style="{StaticResource FilterButtonStyle}" Click="TodayFilter_Click" Background="#3498DB" Foreground="White"/>
+                        <Button Content="Last 7 Days" Style="{StaticResource FilterButtonStyle}" Click="Last7DaysFilter_Click"/>
+                        <Button Content="Last 30 Days" Style="{StaticResource FilterButtonStyle}" Click="Last30DaysFilter_Click"/>
+                        <Button Content="This Month" Style="{StaticResource FilterButtonStyle}" Click="MonthFilter_Click"/>
+                        <Button Content="All Time" Style="{StaticResource FilterButtonStyle}" Click="AllTimeFilter_Click"/>
+                        <Button x:Name="pdfBtn" Content="📊 Export PDF" Margin="10,0,0,0" Click="ExportPDF_Click" Background="#E74C3C" Foreground="White" BorderThickness="0" FontWeight="Bold" Padding="15,6">
+                             <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                    
+                    <Button x:Name="pdfBtnGeneric" Content="📊 Export PDF" HorizontalAlignment="Right" Visibility="Visible" Click="ExportPDF_Click" Background="#E74C3C" Foreground="White" BorderThickness="0" Padding="15,4" FontWeight="Bold">
+                         <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <!-- Search Bar -->
+            <Border Grid.Row="1" Background="White" Padding="20,10" BorderBrush="#EEE" BorderThickness="0,0,0,1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" BorderBrush="#DDD" BorderThickness="1" CornerRadius="8" Padding="10,6" Background="#FAFAFA">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="&#x1F50D;  " Foreground="#95A5A6" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBox   Grid.Column="1" x:Name="txtSearch"
+                                       BorderThickness="0" Background="Transparent"
+                                       Foreground="#2C3E50" FontSize="13"
+                                       VerticalAlignment="Center"
+                                       TextChanged="txtSearch_TextChanged"
+                                       ToolTip="Search by medicine name, supplier, invoice number…"/>
+                        </Grid>
+                    </Border>
+                    <TextBlock Grid.Column="1" x:Name="lblSearchHint" Text="Type to search…" Foreground="#BDC3C7" FontSize="12" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="2" Background="White" CornerRadius="12" Padding="20,15" Margin="20,10" >
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="1" Color="Gray" Opacity="0.1" />
+                </Border.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Border Background="#F4F7F6" CornerRadius="6" Padding="8,4" Margin="0,0,15,0">
+                        <TextBlock Text="📑 SUMMARY" FontWeight="Bold" Foreground="#34495E" FontSize="11"/>
+                    </Border>
+                    <TextBlock x:Name="txtSummary" Text="Total Amount: 0 | Record Count: 0" Foreground="#2C3E50" FontSize="14" VerticalAlignment="Center" FontWeight="Medium"/>
+                </StackPanel>
+            </Border>
+
+            <Grid Grid.Row="3" x:Name="printableArea" Margin="20,10,20,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel x:Name="brandingArea" Grid.Row="0" Visibility="Collapsed" Margin="20" HorizontalAlignment="Center">
+                    <TextBlock x:Name="brandName" Text="MEDIXA PHARMACY" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#2C3E50"/>
+                    <TextBlock x:Name="brandTagline" Text="Professional Health Services" FontSize="14" HorizontalAlignment="Center" Margin="0,5" Foreground="#7F8C8D"/>
+                    <TextBlock x:Name="reportTitlePrint" Text="Report Preview" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,15"/>
+                    <Separator Margin="0,10"/>
+                </StackPanel>
+
+                <DataGrid x:Name="reportGrid" Grid.Row="1" Background="White" AutoGenerateColumns="True" IsReadOnly="True"
+                          AlternatingRowBackground="#FBFCFC" GridLinesVisibility="Horizontal" BorderThickness="1" BorderBrush="#EEE"
+                          RowHeight="40" FontSize="13" Foreground="#2C3E50" ColumnHeaderHeight="45"
+                          EnableRowVirtualization="True" VirtualizingStackPanel.IsVirtualizing="True">
+                     <DataGrid.Resources>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#F8F9F9"/>
+                            <Setter Property="Foreground" Value="#34495E"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="Padding" Value="10,0"/>
+                            <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                            <Setter Property="BorderBrush" Value="#D5DBDB"/>
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

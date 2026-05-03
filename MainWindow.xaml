@@ -1,0 +1,16 @@
+<Window x:Class="PharmaBilling.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Medixa Loading..." Height="300" Width="500"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        WindowStartupLocation="CenterScreen">
+    <Border CornerRadius="15" Background="#2C3E50">
+        <Grid>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Medixa" FontSize="40" Foreground="White" FontWeight="Bold" />
+                <TextBlock Text="Initializing System..." Foreground="#BDC3C7" Margin="0,10,0,0" HorizontalAlignment="Center" />
+                <ProgressBar x:Name="loadingBar" IsIndeterminate="True" Height="10" Width="400" Margin="0,30,0,0" Foreground="#3498DB"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

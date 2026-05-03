@@ -1,0 +1,144 @@
+<UserControl x:Class="PharmaBilling.Source.Views.SupplierUC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Background="#F0F4F8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#2C3E50" Padding="18,12">
+            <TextBlock Text="SUPPLIER MANAGEMENT" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        </Border>
+
+        <!-- Toolbar: Search + Buttons -->
+        <Border Grid.Row="1" Background="White" Padding="16,10" BorderBrush="#DDE3EC" BorderThickness="0,0,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Search -->
+                <Border Grid.Column="0" BorderBrush="#BDC3C7" BorderThickness="1" CornerRadius="4"
+                        Background="#FAFAFA" Padding="8,0" Margin="0,0,12,0">
+                    <TextBox x:Name="txtSearch"
+                             BorderThickness="0"
+                             Height="34"
+                             VerticalContentAlignment="Center"
+                             FontSize="13"
+                             Background="Transparent"
+                             TextChanged="Search_TextChanged"/>
+                </Border>
+
+                <!-- Action Buttons -->
+                <StackPanel x:Name="spAdminActions" Grid.Column="1" Orientation="Horizontal">
+                    <Button Content="+ Add Supplier"
+                            Background="#27AE60" Foreground="White"
+                            Padding="14,0" Height="36"
+                            FontWeight="Bold" FontSize="13"
+                            BorderThickness="0" Margin="0,0,8,0"
+                            Cursor="Hand" Click="AddSupplier_Click"/>
+                    <Button Content="Edit"
+                            Background="#F39C12" Foreground="White"
+                            Padding="14,0" Height="36"
+                            FontWeight="Bold" FontSize="13"
+                            BorderThickness="0" Margin="0,0,8,0"
+                            Cursor="Hand" Click="EditSupplier_Click"/>
+                    <Button Content="Delete"
+                            Background="#E74C3C" Foreground="White"
+                            Padding="14,0" Height="36"
+                            FontWeight="Bold" FontSize="13"
+                            BorderThickness="0"
+                            Cursor="Hand" Click="DeleteSupplier_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- DataGrid -->
+        <Border Grid.Row="2" Margin="16" Background="White" CornerRadius="6"
+                BorderBrush="#DDE3EC" BorderThickness="1">
+            <DataGrid x:Name="dgSuppliers"
+                      ItemsSource="{Binding Suppliers}"
+                      SelectedItem="{Binding SelectedSupplier}"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      GridLinesVisibility="Horizontal"
+                      Background="White"
+                      BorderThickness="0"
+                      RowHeight="38"
+                      FontSize="13"
+                      EnableRowVirtualization="True"
+                      VirtualizingStackPanel.IsVirtualizing="True"
+                      VirtualizingStackPanel.VirtualizationMode="Recycling"
+                      ScrollViewer.CanContentScroll="True"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      HeadersVisibility="Column"
+                      SelectionMode="Single">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#F7F9FC"/>
+                        <Setter Property="Foreground" Value="#5D6D7E"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="Padding" Value="10,8"/>
+                        <Setter Property="BorderBrush" Value="#DDE3EC"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="BorderBrush" Value="#EEF2F7"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#EBF5FB"/>
+                                <Setter Property="Foreground" Value="#2C3E50"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#F5F8FF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Supplier Name" Binding="{Binding Name}"    Width="2*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Padding" Value="10,0"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Contact"       Binding="{Binding Contact}" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Padding" Value="10,0"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Email"         Binding="{Binding Email}"   Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Padding" Value="10,0"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Address"       Binding="{Binding Address}" Width="2*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Padding" Value="10,0"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

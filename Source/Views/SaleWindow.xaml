@@ -1,0 +1,162 @@
+<Window x:Class="PharmaBilling.Source.Views.SaleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Medixa - New Sale / Invoice" Height="768" Width="1024"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Background="#F4F4F4">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Header -->
+            <RowDefinition Height="*"/>    <!-- Grid -->
+            <RowDefinition Height="Auto"/> <!-- Footer -->
+            <RowDefinition Height="Auto"/> <!-- Buttons -->
+        </Grid.RowDefinitions>
+
+        <!-- HEADER SECTION -->
+        <Border Grid.Row="0" BorderBrush="#CCC" BorderThickness="1" Background="White" Padding="10" Margin="0,0,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Row 1 -->
+                <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,15,5">
+                    <TextBlock Text="Doc #" Foreground="Gray" FontSize="10"/>
+                    <TextBox Text="{Binding DocNo}" Width="80" IsReadOnly="True" Background="#EEE"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" Margin="0,0,15,5">
+                    <TextBlock Text="Sale Date" Foreground="Gray" FontSize="10"/>
+                    <DatePicker SelectedDate="{Binding SaleDate}" Width="120"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="2" Margin="0,0,15,5">
+                    <TextBlock Text="Bill #" Foreground="Gray" FontSize="10"/>
+                    <TextBox Text="{Binding BillNo}" Width="100"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="3" Margin="0,0,15,5">
+                    <TextBlock Text="Type" Foreground="Gray" FontSize="10"/>
+                    <ComboBox ItemsSource="{Binding SaleTypes}" SelectedItem="{Binding SaleType}" Width="100"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="4" Margin="0,0,15,5">
+                    <TextBlock Text="Cash Party Name" Foreground="Gray" FontSize="10"/>
+                    <TextBox Text="{Binding CashPartyName}" />
+                </StackPanel>
+                
+                <StackPanel Grid.Row="0" Grid.Column="5" VerticalAlignment="Bottom">
+                     <Button x:Name="btnSearchItem" Content="SEARCH ITEM (F2)" Background="#3498DB" Foreground="White" Padding="10,5" Click="btnSearchItem_Click"/>
+                </StackPanel>
+
+                <!-- Row 2 -->
+                <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,5,15,0">
+                    <TextBlock Text="Remarks" Foreground="Gray" FontSize="10"/>
+                    <TextBox Text="{Binding Remarks}" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- GRID SECTION -->
+        <DataGrid x:Name="dgSaleItems" Grid.Row="1" ItemsSource="{Binding SaleItems}" SelectedItem="{Binding SelectedSaleItem}" AutoGenerateColumns="False" 
+                  CanUserAddRows="False" Background="White" BorderBrush="#CCC" BorderThickness="1"
+                  RowHeaderWidth="20" GridLinesVisibility="All" Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Item ID" Binding="{Binding MedicineID}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Item Name" Binding="{Binding MedicineName}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Batch" Binding="{Binding BatchNo}" Width="80"/>
+                <DataGridTextColumn Header="Rack No" Binding="{Binding RackNo}" Width="80"/>
+                <DataGridTextColumn Header="TP" Binding="{Binding TP}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Retail Qty" Binding="{Binding Retail}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Qty" Binding="{Binding Quantity, UpdateSourceTrigger=LostFocus}" Width="60"/>
+                <DataGridTextColumn Header="Rate" Binding="{Binding UnitPrice, UpdateSourceTrigger=LostFocus}" Width="80"/>
+                <DataGridTextColumn Header="Total" Binding="{Binding TotalPrice}" IsReadOnly="True" Width="100"/>
+                <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="X" Foreground="Red" Click="RemoveItem_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- FOOTER SECTION -->
+        <Border Grid.Row="2" BorderBrush="#CCC" BorderThickness="1" Background="White" Padding="10" Margin="0,0,0,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Stock Info (Left) -->
+                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                    <Border Background="#2ECC71" Padding="10" CornerRadius="4" Margin="0,0,0,5" MinWidth="150">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock Text="Available Stock: " Foreground="White" FontWeight="Bold" Margin="0,0,10,0"/>
+                            <TextBlock Text="{Binding SelectedStock}" Foreground="White" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Background="#E74C3C" Padding="10" CornerRadius="4" MinWidth="150">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock Text="Balanced Stock: " Foreground="White" FontWeight="Bold" Margin="0,0,10,0"/>
+                            <TextBlock Text="{Binding BalancedStock}" Foreground="White" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <!-- Spacer -->
+                
+                <!-- Totals (Right) -->
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Gross Amount:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,5"/>
+                    <TextBox Text="{Binding GrossTotal, StringFormat=N2}" Grid.Row="0" Grid.Column="1" IsReadOnly="True" HorizontalContentAlignment="Right" Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Discount %:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,5"/>
+                    <TextBox Text="{Binding DiscountPercent}" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Right" Margin="0,0,0,5"/>
+
+                    <TextBlock Text="GST %:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,5"/>
+                    <TextBox Text="{Binding TaxPercent}" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Right" Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Grand Total:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,5" FontWeight="Bold"/>
+                    <TextBox Text="{Binding GrandTotal, StringFormat=N2}" Grid.Row="3" Grid.Column="1" IsReadOnly="True" HorizontalContentAlignment="Right" FontWeight="Bold" Background="#FADBD8" Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Cash Received:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,5"/>
+                    <TextBox Text="{Binding CashReceived, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1" HorizontalContentAlignment="Right" Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Balance:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0" FontWeight="Bold"/>
+                    <TextBox Text="{Binding Balance, StringFormat=N2}" Grid.Row="5" Grid.Column="1" IsReadOnly="True" HorizontalContentAlignment="Right" FontWeight="Bold" Background="#D5F5E3"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- BUTTONS SECTION -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Save Draft" Width="100" Height="30" Margin="0,0,10,0" Click="btnSaveDraft_Click"/>
+            <Button x:Name="btnPrintSave" Content="Print &amp; Save" Width="120" Height="30" Background="#2980B9" Foreground="White" FontWeight="Bold" Click="btnPrintSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

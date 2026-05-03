@@ -1,0 +1,96 @@
+<Window x:Class="PharmaBilling.Source.Views.DashboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Medixa - Deep Fix V4" MinHeight="600" MinWidth="900"
+        WindowState="Maximized" WindowStartupLocation="CenterScreen"
+        PreviewKeyDown="Window_PreviewKeyDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar Navigation -->
+        <Border Grid.Column="0" Background="#2C3E50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <Border Grid.Row="0" Height="80" Background="#1A252F">
+                    <TextBlock x:Name="lblSidebarName" Text="Medixa" Foreground="White" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+                
+                <ListBox Grid.Row="1" x:Name="sideMenu" Background="Transparent" BorderThickness="0" Margin="0,20,0,0" SelectionChanged="SideMenu_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListBox.Resources>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Height" Value="50"/>
+                            <Setter Property="Foreground" Value="#BDC3C7"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <Border Name="Border" Padding="20,0" Background="Transparent" BorderThickness="4,0,0,0">
+                                            <ContentPresenter VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="#253443"/>
+                                            </Trigger>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="#34495E"/>
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="#3498DB"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        
+                        <!-- Removed broken ScrollBar style that caused VirtualizingStackPanel crashes -->
+                    </ListBox.Resources>
+                    <ListBoxItem x:Name="btnDashboard" IsSelected="True">Dashboard</ListBoxItem>
+                    <ListBoxItem x:Name="btnMedicines">Medicines</ListBoxItem>
+                    <ListBoxItem x:Name="btnSales">Sales (POS)</ListBoxItem>
+                    <ListBoxItem x:Name="btnPurchases">Purchases</ListBoxItem>
+                    <ListBoxItem x:Name="btnReports">Reports</ListBoxItem>
+                    <ListBoxItem x:Name="btnAnalysis">Analysis</ListBoxItem>
+                    <ListBoxItem x:Name="btnHR">HR &amp; Staff</ListBoxItem>
+                    <ListBoxItem x:Name="btnSuppliers">Suppliers</ListBoxItem>
+                    <ListBoxItem x:Name="btnCustomers">Customers</ListBoxItem>
+                    <ListBoxItem x:Name="btnAccounting">Accounting</ListBoxItem>
+                    <ListBoxItem x:Name="btnUsers">System Users</ListBoxItem>
+                    <ListBoxItem x:Name="btnSettings">Settings</ListBoxItem>
+                    <ListBoxItem x:Name="btnChangePassword">Change Password</ListBoxItem>
+                    <ListBoxItem x:Name="btnBackup">Backup &amp; Restore</ListBoxItem>
+                </ListBox>
+                
+                <Button Grid.Row="2" Content="Logout" Margin="20,15,20,20" Height="40" Background="#E74C3C" Foreground="White" BorderThickness="0" Click="LogoutButton_Click" Cursor="Hand" />
+            </Grid>
+        </Border>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Column="1" Background="#F4F7F6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Top Header -->
+            <Border Grid.Row="0" Background="White">
+                <Grid Margin="20,0">
+                    <TextBlock x:Name="txtWelcomeHeader" Text="Welcome, Admin" VerticalAlignment="Center" FontSize="18" FontWeight="SemiBold" Foreground="#333" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <TextBlock Text="{Binding Source={x:Static System:DateTime.Now}, StringFormat='MMM dd, yyyy'}" Foreground="#999" Margin="0,0,20,0" VerticalAlignment="Center" xmlns:System="clr-namespace:System;assembly=mscorlib"/>
+                        <Image Source="pack://application:,,,/Source/Images/logo.png" Width="35" Height="35" Stretch="Uniform"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Dynamic Content Area - NO outer ScrollViewer: each page's DataGrid handles its own scroll -->
+            <ContentControl x:Name="MainContentArea" Grid.Row="1" />
+        </Grid>
+    </Grid>
+</Window>
