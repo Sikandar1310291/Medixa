@@ -90,13 +90,13 @@ namespace PharmaBilling.Source.Data
                         {
                             items.Add(new Dictionary<string, object>
                             {
-                                { "MedicineID",  iRow["MedicineID"] },
-                                { "MedicineName",iRow["MedicineName"] },
-                                { "BatchNo",     iRow["BatchNo"] },
-                                { "RackNo",      iRow["RackNo"] },
-                                { "Quantity",    iRow["Quantity"] },
-                                { "UnitPrice",   iRow["UnitPrice"] },
-                                { "TotalPrice",  iRow["TotalPrice"] }
+                                { "MedicineID",  iRow["MedicineID"] == DBNull.Value ? null : iRow["MedicineID"] },
+                                { "MedicineName",iRow["MedicineName"] == DBNull.Value ? null : iRow["MedicineName"] },
+                                { "BatchNo",     iRow["BatchNo"] == DBNull.Value ? null : iRow["BatchNo"] },
+                                { "RackNo",      iRow["RackNo"] == DBNull.Value ? null : iRow["RackNo"] },
+                                { "Quantity",    iRow["Quantity"] == DBNull.Value ? 0 : Convert.ToDouble(iRow["Quantity"]) },
+                                { "UnitPrice",   iRow["UnitPrice"] == DBNull.Value ? 0 : Convert.ToDouble(iRow["UnitPrice"]) },
+                                { "TotalPrice",  iRow["TotalPrice"] == DBNull.Value ? 0 : Convert.ToDouble(iRow["TotalPrice"]) }
                             });
                         }
 
@@ -116,7 +116,10 @@ namespace PharmaBilling.Source.Data
                         Upsert("cloud_sales", payload);
                     }
                 }
-                catch { /* silent */ }
+                catch (Exception ex)
+                {
+                    System.IO.File.AppendAllText(@"C:\Users\ma516\OneDrive\Desktop\sync_error.txt", "Sync Error: " + ex.ToString() + Environment.NewLine);
+                }
             });
         }
 

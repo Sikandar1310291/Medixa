@@ -123,6 +123,9 @@ namespace PharmaBilling
             // Pre-load all data into RAM cache immediately
             PharmaBilling.Source.Data.AppCache.WarmUp();
 
+            // Fire an initial background bulk sync
+            PharmaBilling.Source.Data.CloudSyncService.SyncRecentDataAsync();
+
             var licenseWin = new Source.Views.LicenseWindow();
             licenseWin.Show();
         }
