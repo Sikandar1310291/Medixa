@@ -21,12 +21,14 @@ namespace PharmaBilling.Source.Data
         {
             SaleDataChanged?.Invoke(null, EventArgs.Empty);
             StockChanged?.Invoke(null, EventArgs.Empty);
+            CloudSyncService.SyncRecentDataAsync();
         }
 
         public static void OnPurchaseDataChanged()
         {
             PurchaseDataChanged?.Invoke(null, EventArgs.Empty);
             StockChanged?.Invoke(null, EventArgs.Empty);
+            CloudSyncService.SyncRecentDataAsync();
         }
 
         // Fired directly when a stock batch is edited or deleted from StockUC

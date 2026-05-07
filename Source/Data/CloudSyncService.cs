@@ -58,6 +58,93 @@ namespace PharmaBilling.Source.Data
             });
         }
 
+        /// <summary>
+        /// Periodically called to sync the last 50 sales to the cloud to ensure
+        /// that any offline sales, edits, or returns are eventually synced.
+        /// </summary>
+        public static void SyncRecentDataAsync()
+        {
+            string key = LicenseManager.CurrentLicenseKey;
+            if (string.IsNullOrEmpty(key)) return;
+
+            Task.Run(() =>
+            {
+                try
+                {
+                    var db = new DbHelper();
+                    var dt = db.GetDataTable("SELECT * FROM Sales ORDER BY SaleID DESC LIMIT 50");
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        int saleId = Convert.ToInt32(row["SaleID"]);
+                        
+                        // Get Customer Name
+                        int custId = Convert.ToInt32(row["CustomerID"]);
+                        string customerName = "Walk-in Customer";
+                        var custDt = db.GetDataTable("SELECT Name FROM Customers WHERE CustomerID = " + custId);
+                        if (custDt.Rows.Count > 0) customerName = custDt.Rows[0]["Name"].ToString();
+
+                        // Get Items
+                        var itemsDt = db.GetDataTable("SELECT sd.*, m.Name as MedicineName FROM SaleDetails sd LEFT JOIN Medicines m ON sd.MedicineID = m.MedicineID WHERE sd.SaleID = " + saleId);
+                        var items = new List<Dictionary<string, object>>();
+                        foreach (DataRow iRow in itemsDt.Rows)
+                        {
+                            items.Add(new Dictionary<string, object>
+                            {
+                                { "MedicineID",  iRow["MedicineID"] },
+                                { "MedicineName",iRow["MedicineName"] },
+                                { "BatchNo",     iRow["BatchNo"] },
+                                { "RackNo",      iRow["RackNo"] },
+                                { "Quantity",    iRow["Quantity"] },
+                                { "UnitPrice",   iRow["UnitPrice"] },
+                                { "TotalPrice",  iRow["TotalPrice"] }
+                            });
+                        }
+
+                        var payload = new Dictionary<string, object>
+                        {
+                            { "license_key",    key },
+                            { "local_sale_id",  saleId },
+                            { "sale_date",      Convert.ToDateTime(row["SaleDate"]).ToString("yyyy-MM-dd HH:mm:ss") },
+                            { "customer_name",  customerName },
+                            { "total_amount",   Convert.ToDouble(row["TotalAmount"]) },
+                            { "discount",       Convert.ToDouble(row["Discount"]) },
+                            { "net_paid",       Convert.ToDouble(row["NetPaid"]) },
+                            { "status",         row["Status"].ToString() },
+                            { "items_json",     Json.Serialize(items) }
+                        };
+                        
+                        Upsert("cloud_sales", payload);
+                    }
+                }
+                catch { /* silent */ }
+            });
+        }
+
+        public static void DeleteSaleAsync(int saleId)
+        {
+            string key = LicenseManager.CurrentLicenseKey;
+            if (string.IsNullOrEmpty(key)) return;
+
+            Task.Run(() =>
+            {
+                try
+                {
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                    string url = string.Format("{0}/rest/v1/cloud_sales?license_key=eq.{1}&local_sale_id=eq.{2}", 
+                        SupabaseUrl, Uri.EscapeDataString(key), saleId);
+                    
+                    var req = (HttpWebRequest)WebRequest.Create(url);
+                    req.Method = "DELETE";
+                    req.Timeout = 10000;
+                    req.Headers.Add("apikey", SupabaseKey);
+                    req.Headers.Add("Authorization", "Bearer " + SupabaseKey);
+                    
+                    using (req.GetResponse()) { }
+                }
+                catch { }
+            });
+        }
+
         /// <summary>Upload a completed purchase to the cloud (fire-and-forget).</summary>
         public static void UploadPurchaseAsync(int purchaseId, string supplierName,
                                                 string invoiceNo, string purchaseDate,

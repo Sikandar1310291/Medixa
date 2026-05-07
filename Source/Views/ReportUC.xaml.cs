@@ -468,6 +468,7 @@ namespace PharmaBilling.Source.Views
                     commands.Add(new Tuple<string, System.Data.SQLite.SQLiteParameter[]>(delSale, new System.Data.SQLite.SQLiteParameter[] { new System.Data.SQLite.SQLiteParameter("@sid", saleId) }));
 
                     new PharmaBilling.Source.Data.DbHelper().ExecuteTransaction(commands);
+                    PharmaBilling.Source.Data.CloudSyncService.DeleteSaleAsync(saleId);
                     PharmaBilling.Source.Data.AppEvents.OnSaleDataChanged();
 
                     MessageBox.Show("Sale deleted and stock restored successfully. Please refresh the report.", "Success");
