@@ -11,7 +11,9 @@ namespace PharmaBilling
 {
     public partial class App : Application
     {
-        private static MedixaLanServer _lanServer;
+        private static MedixaLanServer      _lanServer;
+        private static OwnerDashboardServer  _ownerServer;
+        private static CloudflareManager     _cloudflare;
 
         // Fires every 10 minutes while the app is open.
         // When internet is available it silently pushes the activation
@@ -71,6 +73,39 @@ namespace PharmaBilling
                         catch { /* Will still work for local use */ }
                     }
                 });
+
+                // Start Owner Dashboard server on port 5001 (read-only, internet-facing)
+                System.Threading.Tasks.Task.Run(() =>
+                {
+                    try
+                    {
+                        _ownerServer = new OwnerDashboardServer();
+                        _ownerServer.Start();
+                    }
+                    catch (Exception)
+                    {
+                        OwnerDashboardServer.RegisterUrlAcl();
+                        Thread.Sleep(1000);
+                        try
+                        {
+                            _ownerServer = new OwnerDashboardServer();
+                            _ownerServer.Start();
+                        }
+                        catch { /* Dashboard unavailable but main app still works */ }
+                    }
+                });
+
+                // Start Cloudflare Tunnel — exposes port 5001 to internet
+                System.Threading.Tasks.Task.Run(() =>
+                {
+                    Thread.Sleep(2000); // Wait for OwnerDashboardServer to fully start first
+                    _cloudflare = new CloudflareManager();
+                    _cloudflare.TunnelReady += (url) => 
+                    {
+                        SupabaseDashboardSync.SaveTunnelUrl(url);
+                    };
+                    _cloudflare.Start();
+                });
             }
 
             // Start the background heartbeat timer.
@@ -106,7 +141,9 @@ namespace PharmaBilling
         {
             base.OnExit(e);
             try { if (_heartbeatTimer != null) { _heartbeatTimer.Stop(); _heartbeatTimer.Dispose(); } } catch { }
-            try { if (_lanServer != null) _lanServer.Stop(); } catch { }
+            try { if (_lanServer    != null) _lanServer.Stop();    } catch { }
+            try { if (_ownerServer  != null) _ownerServer.Stop();  } catch { }
+            try { if (_cloudflare   != null) _cloudflare.Stop();   } catch { }
         }
     }
 }

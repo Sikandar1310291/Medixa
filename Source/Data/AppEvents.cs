@@ -28,5 +28,11 @@ namespace PharmaBilling.Source.Data
             PurchaseDataChanged?.Invoke(null, EventArgs.Empty);
             StockChanged?.Invoke(null, EventArgs.Empty);
         }
+
+        // Fired directly when a stock batch is edited or deleted from StockUC
+        public static void OnStockChanged()
+        {
+            StockChanged?.Invoke(null, EventArgs.Empty);
+        }
     }
 }

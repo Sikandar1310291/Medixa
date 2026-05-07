@@ -4,6 +4,10 @@ namespace PharmaBilling.Source.ViewModels
 {
     public class PurchaseItemViewModel : BaseViewModel
     {
+        // When true, suppresses intermediate recalculations while
+        // multiple fields are being set at once (e.g., during Edit load).
+        private bool _isLoading = false;
+
         private int _medicineID;
         public int MedicineID
         {
@@ -49,7 +53,7 @@ namespace PharmaBilling.Source.ViewModels
                 _packsStr = value;
                 OnPropertyChanged("PacksStr");
                 OnPropertyChanged("Packs");
-                RecalculateQuantity();
+                if (!_isLoading) RecalculateQuantity();
             }
         }
         /// <summary>Number of packs/boxes being purchased.</summary>
@@ -68,8 +72,7 @@ namespace PharmaBilling.Source.ViewModels
                 _packSizeStr = value;
                 OnPropertyChanged("PackSizeStr");
                 OnPropertyChanged("PackSize");
-                RecalculateQuantity();
-                RecalculateRetailQty();
+                if (!_isLoading) { RecalculateQuantity(); RecalculateRetailQty(); }
             }
         }
         /// <summary>Units per pack (e.g. 10 tablets per strip, 30 strips per box).</summary>
@@ -88,7 +91,7 @@ namespace PharmaBilling.Source.ViewModels
                 _looseQtyStr = value;
                 OnPropertyChanged("LooseQtyStr");
                 OnPropertyChanged("LooseQty");
-                RecalculateQuantity();
+                if (!_isLoading) RecalculateQuantity();
             }
         }
         /// <summary>Loose units being purchased alongside full packs.</summary>
@@ -107,7 +110,7 @@ namespace PharmaBilling.Source.ViewModels
                 _quantityStr = value;
                 OnPropertyChanged("QuantityStr");
                 OnPropertyChanged("Quantity");
-                CalculateTotal();
+                if (!_isLoading) CalculateTotal();
             }
         }
         /// <summary>Total units = (Packs x PackSize) + LooseQty. Auto-updated.</summary>
@@ -136,6 +139,8 @@ namespace PharmaBilling.Source.ViewModels
         }
 
         // ── PRICING ───────────────────────────────────────────────────────────
+        // RULE: TP always means the price for ONE FULL PACK.
+        //       e.g. A strip of 10 tablets costs Rs.50 → TP = 50, PackSize = 10.
         private string _tpStr = "0";
         public string TPStr
         {
@@ -145,7 +150,7 @@ namespace PharmaBilling.Source.ViewModels
                 _tpStr = value;
                 OnPropertyChanged("TPStr");
                 OnPropertyChanged("TP");
-                CalculateTotal();
+                if (!_isLoading) CalculateTotal();
             }
         }
         public double TP
@@ -158,12 +163,12 @@ namespace PharmaBilling.Source.ViewModels
         public string RetailStr
         {
             get { return _retailStr; }
-            set 
-            { 
-                _retailStr = value; 
-                OnPropertyChanged("RetailStr"); 
+            set
+            {
+                _retailStr = value;
+                OnPropertyChanged("RetailStr");
                 OnPropertyChanged("Retail");
-                RecalculateRetailQty();
+                if (!_isLoading) RecalculateRetailQty();
             }
         }
         public double Retail
@@ -176,9 +181,10 @@ namespace PharmaBilling.Source.ViewModels
         public string RetailQtyStr
         {
             get { return _retailQtyStr; }
-            set { 
-                _retailQtyStr = value; 
-                OnPropertyChanged("RetailQtyStr"); 
+            set
+            {
+                _retailQtyStr = value;
+                OnPropertyChanged("RetailQtyStr");
                 OnPropertyChanged("RetailQty");
             }
         }
@@ -195,19 +201,47 @@ namespace PharmaBilling.Source.ViewModels
             set { _totalPrice = value; OnPropertyChanged("TotalPrice"); }
         }
 
+        /// <summary>
+        /// Call this before setting multiple fields at once (e.g., in Edit load)
+        /// to suppress intermediate recalculations that fire with stale data.
+        /// Always call EndBatchUpdate() after to finalize the calculation.
+        /// </summary>
+        public void BeginBatchUpdate() { _isLoading = true; }
+
+        /// <summary>
+        /// Call this after all fields have been set in a batch.
+        /// Runs one clean recalculation pass.
+        /// </summary>
+        public void EndBatchUpdate()
+        {
+            _isLoading = false;
+            RecalculateQuantity(); // Internally calls CalculateTotal at the end
+        }
+
+        /// <summary>
+        /// End batch update but use the stored DB total directly.
+        /// This guarantees edit-window total = list-view total = DB total.
+        /// No recalculation — we trust the saved data.
+        /// </summary>
+        public void EndBatchUpdateWithTotal(double storedTotal)
+        {
+            _isLoading = false;
+            // Update Quantity display without triggering CalculateTotal
+            double q = (Packs * PackSize) + LooseQty;
+            _quantityStr = q > 0 ? q.ToString() : _quantityStr;
+            OnPropertyChanged("QuantityStr");
+            OnPropertyChanged("Quantity");
+            // Use stored total directly — never recalculate on load
+            TotalPrice = storedTotal;
+            RecalculateRetailQty();
+        }
+
         private void CalculateTotal()
         {
-            if (Packs > 0)
-            {
-                // Normal Purchase Mode (TP is per Pack)
-                double unitTP = PackSize > 0 ? TP / PackSize : 0;
-                TotalPrice = (TP * Packs) + (unitTP * LooseQty);
-            }
-            else
-            {
-                // Loose Purchase Mode (TP is per Unit, Quantity is the raw unit count)
-                TotalPrice = TP * Quantity;
-            }
+            // ── OFFICIAL FORMULA (agreed) ─────────────────────────────────────
+            // Total = Packs × TP   (TP is always the price per ONE full pack)
+            // LooseQty is tracked for stock purposes only — NOT added to Total.
+            TotalPrice = Math.Round(TP * Packs, 2);
         }
     }
 }

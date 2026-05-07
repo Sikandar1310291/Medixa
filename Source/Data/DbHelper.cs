@@ -262,6 +262,10 @@ namespace PharmaBilling.Source.Data
 
                     try { new SQLiteCommand("ALTER TABLE Medicines ADD COLUMN BoxSize INTEGER DEFAULT 1", conn).ExecuteNonQuery(); } catch { }
                     try { new SQLiteCommand("ALTER TABLE Purchases ADD COLUMN PurchaseType TEXT DEFAULT 'Normal'", conn).ExecuteNonQuery(); } catch { }
+                    // PackSize stores the exact pack/box size used at purchase time.
+                    // This prevents inside/outside total mismatch when BoxSize is later edited in Medicines table.
+                    try { new SQLiteCommand("ALTER TABLE PurchaseDetails ADD COLUMN PackSize REAL DEFAULT 1", conn).ExecuteNonQuery(); } catch { }
+
 
                     try
                     {

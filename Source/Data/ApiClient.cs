@@ -31,7 +31,8 @@ namespace PharmaBilling.Source.Data
         public string PharmacyTagline { get; private set; }
         public string ContactInfo { get; private set; }
         public string PharmacyAddress { get; private set; }
-        public string PharmacyEmail { get; private set; }
+        public string PharmacyEmail    { get; private set; }
+        public string OwnerPin         { get; private set; }
         private string _baseUrl;
         private JavaScriptSerializer _json;
 
@@ -58,6 +59,7 @@ namespace PharmaBilling.Source.Data
                 ContactInfo = map != null && map.ContainsKey("contactInfo") ? map["contactInfo"].ToString() : "N/A";
                 PharmacyAddress = map != null && map.ContainsKey("pharmacyAddress") ? map["pharmacyAddress"].ToString() : "N/A";
                 PharmacyEmail = map != null && map.ContainsKey("pharmacyEmail") ? map["pharmacyEmail"].ToString() : "N/A";
+                OwnerPin      = map != null && map.ContainsKey("ownerPin")      ? map["ownerPin"].ToString()      : "1234";
             }
             else
             {
@@ -70,30 +72,33 @@ namespace PharmaBilling.Source.Data
                 ContactInfo = "N/A";
                 PharmacyAddress = "N/A";
                 PharmacyEmail = "N/A";
+                OwnerPin      = "1234";
             }
 
             _baseUrl = string.Format("http://{0}:{1}", ServerIP, ServerPort);
         }
 
-        public void SaveConfig(string name, string tagline, string contact, string address, string email)
+        public void SaveConfig(string name, string tagline, string contact, string address, string email, string ownerPin = null)
         {
-            PharmacyName = name;
+            PharmacyName    = name;
             PharmacyTagline = tagline;
-            ContactInfo = contact;
+            ContactInfo     = contact;
             PharmacyAddress = address;
-            PharmacyEmail = email;
+            PharmacyEmail   = email;
+            if (ownerPin != null) OwnerPin = ownerPin;
 
             var map = new System.Collections.Generic.Dictionary<string, object>
             {
-                { "mode", Mode },
-                { "serverIP", ServerIP },
-                { "serverPort", ServerPort },
-                { "dbPath", DbPath },
-                { "pharmacyName", PharmacyName },
-                { "pharmacyTagline", PharmacyTagline },
-                { "contactInfo", ContactInfo },
-                { "pharmacyAddress", PharmacyAddress },
-                { "pharmacyEmail", PharmacyEmail }
+                { "mode",             Mode },
+                { "serverIP",         ServerIP },
+                { "serverPort",       ServerPort },
+                { "dbPath",           DbPath },
+                { "pharmacyName",     PharmacyName },
+                { "pharmacyTagline",  PharmacyTagline },
+                { "contactInfo",      ContactInfo },
+                { "pharmacyAddress",  PharmacyAddress },
+                { "pharmacyEmail",    PharmacyEmail },
+                { "ownerPin",         OwnerPin ?? "1234" }
             };
 
             string json = _json.Serialize(map);

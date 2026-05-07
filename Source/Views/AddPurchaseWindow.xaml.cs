@@ -46,31 +46,48 @@ namespace PharmaBilling.Source.Views
         private void LoadPurchaseItems(int purchaseId)
         {
             var dt = AppCache.Db.GetDataTable(
-                "SELECT pd.*, m.Name as MedicineName, m.SalePrice, m.BoxSize FROM PurchaseDetails pd " +
-                "JOIN Medicines m ON pd.MedicineID = m.MedicineID WHERE pd.PurchaseID = " + purchaseId);
+                @"SELECT pd.*, m.Name AS MedicineName,
+                         m.SalePrice  AS MedSalePrice,
+                         COALESCE(pd.PackSize, m.BoxSize, 1) AS EffectivePackSize
+                  FROM PurchaseDetails pd
+                  JOIN Medicines m ON pd.MedicineID = m.MedicineID
+                  WHERE pd.PurchaseID = " + purchaseId);
 
             foreach (System.Data.DataRow row in dt.Rows)
             {
-                double qty     = Convert.ToDouble(row["Quantity"]);
-                double boxSize = row["BoxSize"] != DBNull.Value ? Convert.ToDouble(row["BoxSize"]) : 1;
-                if (boxSize < 1) boxSize = 1;
+                // ── TRUST THE DB ──────────────────────────────────────────────
+                // storedTotal is the EXACT total that was saved. We NEVER recalculate it.
+                double storedTotal   = row["TotalPrice"]    != DBNull.Value ? Convert.ToDouble(row["TotalPrice"])    : 0;
+                double storedQty     = row["Quantity"]      != DBNull.Value ? Convert.ToDouble(row["Quantity"])      : 0;
+                double packSize      = row["EffectivePackSize"] != DBNull.Value ? Convert.ToDouble(row["EffectivePackSize"]) : 1;
+                if (packSize < 1) packSize = 1;
 
-                double perUnitTP     = Convert.ToDouble(row["PurchasePrice"]);
-                double perUnitRetail = row["SalePrice"] != DBNull.Value ? Convert.ToDouble(row["SalePrice"]) : 0;
+                double perUnitTP     = row["PurchasePrice"] != DBNull.Value ? Convert.ToDouble(row["PurchasePrice"]) : 0;
+                double perUnitRetail = row["MedSalePrice"]  != DBNull.Value ? Convert.ToDouble(row["MedSalePrice"])  : 0;
 
-                var item = new PurchaseItemViewModel
-                {
-                    MedicineID   = Convert.ToInt32(row["MedicineID"]),
-                    MedicineName = row["MedicineName"].ToString(),
-                    BatchNo      = row["BatchNo"].ToString(),
-                    ExpiryDate   = row["ExpiryDate"].ToString(),
-                    PackSize     = boxSize,
-                    TP           = perUnitTP * boxSize,
-                    Retail       = perUnitRetail * boxSize,
-                };
+                // ── DERIVE Packs FROM storedTotal, NOT from Qty/PackSize ─────
+                // The user may have entered Packs=1 + Qty=112 + TP=678.23 → Total=678.23.
+                // If we derive Packs=112/1=112, Total becomes 112×678.23 = WRONG.
+                // Instead: Packs = storedTotal / TP_per_pack.
+                double tpPerPack = perUnitTP * packSize;
+                double packs = (tpPerPack > 0) ? Math.Round(storedTotal / tpPerPack, 4) : storedQty;
 
-                item.Packs    = Math.Floor(qty / boxSize);
-                item.LooseQty = qty % boxSize;
+                var item = new PurchaseItemViewModel();
+                item.BeginBatchUpdate();
+
+                item.MedicineID   = Convert.ToInt32(row["MedicineID"]);
+                item.MedicineName = row["MedicineName"].ToString();
+                item.BatchNo      = row["BatchNo"].ToString();
+                item.ExpiryDate   = row["ExpiryDate"].ToString();
+                item.PackSize     = packSize;
+                item.TP           = tpPerPack;
+                item.Retail       = perUnitRetail * packSize;
+                item.Packs        = packs;
+                item.LooseQty     = 0;
+                item.Quantity     = storedQty;
+
+                // Set TotalPrice directly from DB — guaranteed match with list view.
+                item.EndBatchUpdateWithTotal(storedTotal);
 
                 _vm.PurchaseItems.Add(item);
             }

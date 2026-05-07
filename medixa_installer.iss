@@ -4,7 +4,7 @@
 ; ============================================================
 
 #define AppName      "Medixa Pharmacy Software"
-#define AppVersion   "1.8"
+#define AppVersion   "1.9"
 #define AppPublisher "Apexora AI Solutions"
 #define AppURL       "https://apexoraai.com"
 #define AppExeName   "PharmaBilling.exe"
@@ -23,7 +23,7 @@ DefaultGroupName={#AppName}
 AllowNoIcons=no
 LicenseFile=
 OutputDir=.\Installer_Output
-OutputBaseFilename=Medixa_Setup_v1.8
+OutputBaseFilename=Medixa_Setup_v1.9
 SetupIconFile=logo.ico
 Compression=lzma2/ultra64
 SolidCompression=yes

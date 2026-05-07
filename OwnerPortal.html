@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medixa - Owner Portal Lookup</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
+            font-family: system-ui, sans-serif; 
+            color: #fff;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px 36px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        .icon { font-size: 48px; margin-bottom: 16px; }
+        h1 { font-size: 24px; margin-bottom: 8px; font-weight: 700; }
+        p.sub { color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 30px; }
+        
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label { display: block; font-size: 12px; margin-bottom: 8px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; }
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #1abc9c;
+            box-shadow: 0 0 0 3px rgba(26,188,156,0.3);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26,188,156,0.4);
+        }
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .error-msg {
+            display: none;
+            background: rgba(231,76,60,0.2);
+            border: 1px solid rgba(231,76,60,0.5);
+            color: #ff6b6b;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .success-card {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            background: rgba(26,188,156,0.1);
+            border: 1px solid rgba(26,188,156,0.3);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .success-card h3 { color: #1abc9c; font-size: 16px; margin-bottom: 10px; }
+        .success-card p { font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 16px; line-height: 1.5; }
+        .link-btn {
+            display: block;
+            text-align: center;
+            background: #1abc9c;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .link-btn:hover { background: #16a085; }
+        
+        .footer { margin-top: 30px; font-size: 11px; color: rgba(255,255,255,0.4); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="icon">🏥</div>
+    <h1>Owner Portal</h1>
+    <p class="sub">Find your live Medixa dashboard</p>
+
+    <div class="error-msg" id="errorMsg">License key not found or dashboard is offline.</div>
+
+    <form id="lookupForm">
+        <div class="input-group">
+            <label>License Key</label>
+            <input type="text" id="licenseKey" placeholder="e.g. XXXX-XXXX-XXXX" required autocomplete="off">
+        </div>
+        <button type="submit" id="submitBtn">
+            <span class="spinner" id="spinner"></span>
+            <span id="btnText">Find Dashboard</span>
+        </button>
+    </form>
+
+    <div class="success-card" id="successCard">
+        <h3>✅ Dashboard Found!</h3>
+        <p>Pharmacy: <strong id="pharmName">...</strong><br>
+        <span style="font-size:11px; opacity:0.7">Last updated: <span id="lastUpdated">...</span></span></p>
+        <a href="#" id="dashLink" class="link-btn" target="_blank" rel="noopener">Open Dashboard 🚀</a>
+    </div>
+
+    <div class="footer">Medixa Pharmacy Software &copy; 2026</div>
+</div>
+
+<script>
+    // Supabase Configuration
+    const SUPABASE_URL = "https://idnfkbgswrbhmqzsnxnk.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_-Uwrrbhxubrc3dDYDw6gMw_1xRb2oYd";
+
+    const form = document.getElementById('lookupForm');
+    const licenseInput = document.getElementById('licenseKey');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const spinner = document.getElementById('spinner');
+    const errorMsg = document.getElementById('errorMsg');
+    const successCard = document.getElementById('successCard');
+    
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const key = licenseInput.value.trim();
+        if (!key) return;
+
+        // Reset UI
+        errorMsg.style.display = 'none';
+        successCard.style.display = 'none';
+        submitBtn.disabled = true;
+        btnText.textContent = 'Searching...';
+        spinner.style.display = 'inline-block';
+
+        try {
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/pharmacy_dashboard?select=*&license_key=eq.${encodeURIComponent(key)}`, {
+                method: 'GET',
+                headers: {
+                    'apikey': SUPABASE_KEY,
+                    'Authorization': `Bearer ${SUPABASE_KEY}`
+                }
+            });
+
+            if (!response.ok) throw new Error('Network error');
+
+            const data = await response.json();
+
+            if (data && data.length > 0) {
+                const record = data[0];
+                
+                document.getElementById('pharmName').textContent = record.pharmacy_name || 'Medixa Pharmacy';
+                
+                // Format date nicely
+                const dateObj = new Date(record.updated_at);
+                document.getElementById('lastUpdated').textContent = dateObj.toLocaleString();
+                
+                const link = document.getElementById('dashLink');
+                link.href = record.tunnel_url;
+                
+                successCard.style.display = 'block';
+            } else {
+                errorMsg.textContent = "License key not found. Ensure Medixa is running and connected to the internet.";
+                errorMsg.style.display = 'block';
+            }
+        } catch (error) {
+            console.error('Lookup Error:', error);
+            errorMsg.textContent = "Error connecting to server. Please try again.";
+            errorMsg.style.display = 'block';
+        } finally {
+            submitBtn.disabled = false;
+            btnText.textContent = 'Find Dashboard';
+            spinner.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

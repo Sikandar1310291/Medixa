@@ -48,6 +48,7 @@ namespace PharmaBilling.Source.Views
             try
             {
                 if (_medicineUC == null)    _medicineUC    = new MedicineUC();
+                if (_stockUC == null)       _stockUC       = new StockUC();
                 if (_saleTabsUC == null)    _saleTabsUC    = new SaleTabsUC();
                 if (_purchaseUC == null)    _purchaseUC    = new PurchaseUC();
                 if (_supplierUC == null)    _supplierUC    = new SupplierUC();
@@ -83,6 +84,7 @@ namespace PharmaBilling.Source.Views
         // UI Cache to fix navigation lag
         private DashboardUC _dashboardUC;
         private MedicineUC _medicineUC;
+        private StockUC    _stockUC;
         private SaleTabsUC _saleTabsUC;
         private SupplierUC _supplierUC;
         private CustomerUC _customerUC;
@@ -172,6 +174,12 @@ namespace PharmaBilling.Source.Views
                 if (_medicineUC == null) _medicineUC = new MedicineUC();
                 else { var mvm = _medicineUC.DataContext as ViewModels.MedicineViewModel; if (mvm != null) mvm.LoadMedicines(); }
                 MainContentArea.Content = _medicineUC;
+            }
+            else if (content == "Available Stock")
+            {
+                if (_stockUC == null) _stockUC = new StockUC();
+                else _stockUC.Refresh(); // always pull fresh data on navigation
+                MainContentArea.Content = _stockUC;
             }
             else if (content == "Sales (POS)")
             {

@@ -209,20 +209,27 @@ namespace PharmaBilling.Source.ViewModels
         public void AddToPurchase(Medicine med, int qty)
         {
             double initPackSize = med.BoxSize > 0 ? med.BoxSize : 1;
-            double initQty = 1 * initPackSize; // Packs = 1 initially
-            var newItem = new PurchaseItemViewModel
-            {
-                MedicineID   = med.MedicineID,
-                MedicineName = med.Name,
-                Packs        = 1,   
-                PackSize     = initPackSize,
-                TP           = med.PurchasePrice * initQty,
-                Retail       = med.SalePrice * initQty,
-                BatchNo      = "BATCH-" + DateTime.Now.ToString("MMdd"),
-                RackNo       = "A-1",
-                ExpiryDate   = DateTime.Now.AddYears(1).ToString("yyyy-MM-dd")
-            };
-            newItem.Quantity = initQty;
+            
+            var newItem = new PurchaseItemViewModel();
+            newItem.BeginBatchUpdate();
+
+            newItem.MedicineID   = med.MedicineID;
+            newItem.MedicineName = med.Name;
+            newItem.BatchNo      = "BATCH-" + DateTime.Now.ToString("MMdd");
+            newItem.RackNo       = "A-1";
+            newItem.ExpiryDate   = DateTime.Now.AddYears(1).ToString("yyyy-MM-dd");
+            newItem.PackSize     = initPackSize;
+            
+            // DB stores PurchasePrice and SalePrice per-unit. 
+            // In the UI, TP and Retail are always per-PACK.
+            newItem.TP           = med.PurchasePrice * initPackSize;
+            newItem.Retail       = med.SalePrice * initPackSize;
+            
+            newItem.Packs        = 1;
+            newItem.LooseQty     = 0;
+            
+            newItem.EndBatchUpdate();
+            
             PurchaseItems.Add(newItem);
         }
 
@@ -260,23 +267,29 @@ namespace PharmaBilling.Source.ViewModels
             // 2. Insert Details & 3. Update Stocks
             foreach (var item in PurchaseItems)
             {
-                string detSql = @"INSERT INTO PurchaseDetails (PurchaseID, MedicineID, BatchNo, ExpiryDate, Quantity, PurchasePrice, TotalPrice) 
-                                  SELECT p.PurchaseID, @MID, @Batch, @Exp, @Qty, @Price, @Total
+                // Derive per-unit values for DB storage.
+                // DB always stores prices per-unit so Sale screen can work at tablet/unit level.
+                double perUnitTP     = item.PackSize > 0 ? item.TP     / item.PackSize : item.TP;
+                double perUnitRetail = item.PackSize > 0 ? item.Retail / item.PackSize : item.Retail;
+
+                // Also store PackSize so that editing this purchase later always
+                // reconstructs the EXACT same Packs/TP values — regardless of whether
+                // the medicine's BoxSize is changed afterwards.
+                string detSql = @"INSERT INTO PurchaseDetails
+                                    (PurchaseID, MedicineID, BatchNo, ExpiryDate, Quantity, PurchasePrice, TotalPrice, PackSize)
+                                  SELECT p.PurchaseID, @MID, @Batch, @Exp, @Qty, @Price, @Total, @PackSize
                                   FROM Purchases p WHERE p.InvoiceNo = @Inv ORDER BY p.PurchaseID DESC LIMIT 1;";
-                // Store the per-unit retail price (RetailQty = Retail / PackSize) so the
-                // Sale screen shows the correct single-unit price, not the full pack price.
-                double perUnitRetail = item.RetailQty;
-                double perUnitTP = item.PackSize > 0 ? item.TP / item.PackSize : item.TP;
 
                 var detParams = new System.Data.SQLite.SQLiteParameter[]
                 {
-                    new System.Data.SQLite.SQLiteParameter("@Inv", InvoiceNo),
-                    new System.Data.SQLite.SQLiteParameter("@MID", item.MedicineID),
-                    new System.Data.SQLite.SQLiteParameter("@Batch", item.BatchNo),
-                    new System.Data.SQLite.SQLiteParameter("@Exp", item.ExpiryDate),
-                    new System.Data.SQLite.SQLiteParameter("@Qty", item.Quantity),
-                    new System.Data.SQLite.SQLiteParameter("@Price", perUnitTP),
-                    new System.Data.SQLite.SQLiteParameter("@Total", item.TotalPrice)
+                    new System.Data.SQLite.SQLiteParameter("@Inv",      InvoiceNo),
+                    new System.Data.SQLite.SQLiteParameter("@MID",      item.MedicineID),
+                    new System.Data.SQLite.SQLiteParameter("@Batch",    item.BatchNo),
+                    new System.Data.SQLite.SQLiteParameter("@Exp",      item.ExpiryDate),
+                    new System.Data.SQLite.SQLiteParameter("@Qty",      item.Quantity),
+                    new System.Data.SQLite.SQLiteParameter("@Price",    perUnitTP),
+                    new System.Data.SQLite.SQLiteParameter("@Total",    item.TotalPrice),
+                    new System.Data.SQLite.SQLiteParameter("@PackSize", item.PackSize)
                 };
                 commands.Add(new Tuple<string, System.Data.SQLite.SQLiteParameter[]>(detSql, detParams));
 

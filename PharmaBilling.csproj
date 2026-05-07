@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
-
-
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -135,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Source\Views\StockUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Source\Views\SaleUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -237,6 +238,9 @@
     <Compile Include="Source\Data\ApiClient.cs" />
     <Compile Include="Source\Network\MedixaLanServer.cs" />
     <Compile Include="Source\Network\MedixaLanClient.cs" />
+    <Compile Include="Source\Network\OwnerDashboardServer.cs" />
+    <Compile Include="Source\Network\CloudflareManager.cs" />
+    <Compile Include="Source\Network\SupabaseDashboardSync.cs" />
     <Compile Include="Source\Models\Category.cs" />
     <Compile Include="Source\Models\Customer.cs" />
     <Compile Include="Source\Models\Ledger.cs" />
@@ -320,6 +324,9 @@
     <Compile Include="Source\Views\MedicineUC.xaml.cs">
       <DependentUpon>MedicineUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Source\Views\StockUC.xaml.cs">
+      <DependentUpon>StockUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Source\Views\SaleUC.xaml.cs">
       <DependentUpon>SaleUC.xaml</DependentUpon>
     </Compile>
@@ -401,9 +408,3 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
-
-
-
-
-
-

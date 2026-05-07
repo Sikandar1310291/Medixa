@@ -53,6 +53,7 @@
                     </ListBox.Resources>
                     <ListBoxItem x:Name="btnDashboard" IsSelected="True">Dashboard</ListBoxItem>
                     <ListBoxItem x:Name="btnMedicines">Medicines</ListBoxItem>
+                    <ListBoxItem x:Name="btnStock">Available Stock</ListBoxItem>
                     <ListBoxItem x:Name="btnSales">Sales (POS)</ListBoxItem>
                     <ListBoxItem x:Name="btnPurchases">Purchases</ListBoxItem>
                     <ListBoxItem x:Name="btnReports">Reports</ListBoxItem>
