@@ -113,7 +113,14 @@ namespace PharmaBilling.Source.Data
                             { "items_json",     Json.Serialize(items) }
                         };
                         
-                        Upsert("cloud_sales", payload);
+                        try
+                        {
+                            Upsert("cloud_sales", payload);
+                        }
+                        catch (Exception ex)
+                        {
+                            System.IO.File.AppendAllText(@"C:\Users\ma516\OneDrive\Desktop\sync_error.txt", "Sale Sync Error (" + saleId + "): " + ex.ToString() + Environment.NewLine);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -379,6 +386,12 @@ namespace PharmaBilling.Source.Data
             byte[] data = Encoding.UTF8.GetBytes(json);
 
             string url = SupabaseUrl + "/rest/v1/" + table;
+            
+            if (table == "cloud_sales")
+                url += "?on_conflict=license_key,local_sale_id";
+            else if (table == "cloud_purchases")
+                url += "?on_conflict=license_key,local_purchase_id";
+
             var req = (HttpWebRequest)WebRequest.Create(url);
             req.Method         = "POST";
             req.ContentType    = "application/json";
