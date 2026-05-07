@@ -65,7 +65,7 @@ namespace PharmaBilling.Source.Views
         {
             var result  = new List<StockRow>();
             var today   = DateTime.Today;
-            var soon    = today.AddDays(30);
+            var soon    = today.AddMonths(6);
 
             string sql = @"
                 SELECT s.StockID,

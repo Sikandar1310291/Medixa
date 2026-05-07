@@ -80,7 +80,7 @@ namespace PharmaBilling.Source.Views
                         AND COALESCE((SELECT SUM(s.Quantity) FROM Stocks s WHERE s.MedicineID=m.MedicineID),0) <= m.MinStock");
                     int    expired = GetScalarInt(@"SELECT COUNT(DISTINCT MedicineID) FROM Stocks
                         WHERE Quantity>0 AND ExpiryDate IS NOT NULL AND ExpiryDate!=''
-                        AND length(ExpiryDate)>=7 AND date(ExpiryDate)<date('now', '+1 month')");
+                        AND length(ExpiryDate)>=7 AND date(ExpiryDate)<date('now', '+6 months')");
 
                     // Donut
                     int inStk  = GetScalarInt(@"SELECT COUNT(*) FROM Medicines m WHERE m.Status != 'Inactive'
