@@ -523,6 +523,8 @@ namespace PharmaBilling.Source.Data
                 url += "?on_conflict=license_key,local_sale_id";
             else if (table == "cloud_purchases")
                 url += "?on_conflict=license_key,local_purchase_id";
+            else if (table == "cloud_metrics")
+                url += "?on_conflict=license_key";
 
             var req = (HttpWebRequest)WebRequest.Create(url);
             req.Method         = "POST";
