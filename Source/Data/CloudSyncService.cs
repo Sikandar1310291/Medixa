@@ -244,16 +244,16 @@ namespace PharmaBilling.Source.Data
                         { "totalStockValue", totalStockValue }
                     };
 
-                    var lowStockDt = db.GetDataTable("SELECT m.MedicineID, m.Name, m.GenericFormula, m.MinStock, COALESCE(SUM(s.Quantity), 0) as TotalStock FROM Medicines m LEFT JOIN Stocks s ON m.MedicineID = s.MedicineID GROUP BY m.MedicineID HAVING TotalStock <= m.MinStock ORDER BY TotalStock ASC LIMIT 50");
-                    var lowStock = new List<Dictionary<string, object>>();
-                    foreach(DataRow r in lowStockDt.Rows) {
-                        lowStock.Add(new Dictionary<string, object> {
+                    var availStockDt = db.GetDataTable("SELECT m.MedicineID, m.Name, m.GenericFormula, m.MinStock, COALESCE(SUM(s.Quantity), 0) as TotalStock FROM Medicines m JOIN Stocks s ON m.MedicineID = s.MedicineID GROUP BY m.MedicineID HAVING TotalStock > 0 ORDER BY TotalStock DESC LIMIT 200");
+                    var availStock = new List<Dictionary<string, object>>();
+                    foreach(DataRow r in availStockDt.Rows) {
+                        availStock.Add(new Dictionary<string, object> {
                             { "id", r["MedicineID"] }, { "name", r["Name"] }, { "generic", r["GenericFormula"] },
                             { "stock", r["TotalStock"] }, { "min", r["MinStock"] }
                         });
                     }
 
-                    var expiredDt = db.GetDataTable("SELECT s.MedicineID, m.Name, m.GenericFormula, s.BatchNo, s.Quantity, s.ExpiryDate FROM Stocks s JOIN Medicines m ON s.MedicineID = m.MedicineID WHERE s.ExpiryDate <= date('now') AND s.Quantity > 0 ORDER BY s.ExpiryDate ASC LIMIT 50");
+                    var expiredDt = db.GetDataTable("SELECT s.MedicineID, m.Name, m.GenericFormula, s.BatchNo, s.Quantity, s.ExpiryDate FROM Stocks s JOIN Medicines m ON s.MedicineID = m.MedicineID WHERE s.ExpiryDate <= date('now') AND s.Quantity > 0 ORDER BY s.ExpiryDate ASC LIMIT 100");
                     var expired = new List<Dictionary<string, object>>();
                     foreach(DataRow r in expiredDt.Rows) {
                         expired.Add(new Dictionary<string, object> {
@@ -267,7 +267,7 @@ namespace PharmaBilling.Source.Data
                     {
                         { "license_key", key },
                         { "kpi_json", Json.Serialize(kpi) },
-                        { "low_stock_json", Json.Serialize(lowStock) },
+                        { "low_stock_json", Json.Serialize(availStock) },
                         { "expired_json", Json.Serialize(expired) }
                     };
 

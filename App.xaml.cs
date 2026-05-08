@@ -125,6 +125,8 @@ namespace PharmaBilling
 
             // Fire an initial background bulk sync
             PharmaBilling.Source.Data.CloudSyncService.SyncRecentDataAsync();
+            PharmaBilling.Source.Data.CloudSyncService.SyncRecentPurchasesAsync();
+            PharmaBilling.Source.Data.CloudSyncService.SyncMetricsAsync();
 
             var licenseWin = new Source.Views.LicenseWindow();
             licenseWin.Show();
