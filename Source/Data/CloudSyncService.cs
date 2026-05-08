@@ -155,6 +155,138 @@ namespace PharmaBilling.Source.Data
             });
         }
 
+        public static void SyncRecentPurchasesAsync()
+        {
+            string key = LicenseManager.CurrentLicenseKey;
+            if (string.IsNullOrEmpty(key)) return;
+
+            Task.Run(() =>
+            {
+                try
+                {
+                    var db = new DbHelper();
+                    var dt = db.GetDataTable("SELECT * FROM Purchases ORDER BY PurchaseID DESC LIMIT 50");
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        int purchaseId = Convert.ToInt32(row["PurchaseID"]);
+                        
+                        // Get Supplier Name
+                        int suppId = Convert.ToInt32(row["SupplierID"]);
+                        string supplierName = "Walk-in Supplier";
+                        var suppDt = db.GetDataTable("SELECT Name FROM Suppliers WHERE SupplierID = " + suppId);
+                        if (suppDt.Rows.Count > 0) supplierName = suppDt.Rows[0]["Name"].ToString();
+
+                        // Get Items
+                        var itemsDt = db.GetDataTable("SELECT pd.*, m.Name as MedicineName FROM PurchaseDetails pd LEFT JOIN Medicines m ON pd.MedicineID = m.MedicineID WHERE pd.PurchaseID = " + purchaseId);
+                        var items = new List<Dictionary<string, object>>();
+                        foreach (DataRow iRow in itemsDt.Rows)
+                        {
+                            items.Add(new Dictionary<string, object>
+                            {
+                                { "MedicineID",  iRow["MedicineID"] == DBNull.Value ? null : iRow["MedicineID"] },
+                                { "MedicineName",iRow["MedicineName"] == DBNull.Value ? null : iRow["MedicineName"] },
+                                { "BatchNo",     iRow["BatchNo"] == DBNull.Value ? null : iRow["BatchNo"] },
+                                { "Quantity",    iRow["Quantity"] == DBNull.Value ? 0 : Convert.ToDouble(iRow["Quantity"]) },
+                                { "UnitPrice",   iRow["PurchasePrice"] == DBNull.Value ? 0 : Convert.ToDouble(iRow["PurchasePrice"]) },
+                                { "TotalPrice",  iRow["TotalPrice"] == DBNull.Value ? 0 : Convert.ToDouble(iRow["TotalPrice"]) }
+                            });
+                        }
+
+                        var payload = new Dictionary<string, object>
+                        {
+                            { "license_key",       key },
+                            { "local_purchase_id", purchaseId },
+                            { "purchase_date",     Convert.ToDateTime(row["PurchaseDate"]).ToString("yyyy-MM-dd HH:mm:ss") },
+                            { "supplier_name",     supplierName },
+                            { "invoice_no",        row["InvoiceNo"] == DBNull.Value ? "" : row["InvoiceNo"].ToString() },
+                            { "total_amount",      Convert.ToDouble(row["TotalAmount"]) },
+                            { "status",            row["Status"].ToString() },
+                            { "items_json",        Json.Serialize(items) }
+                        };
+                        
+                        try
+                        {
+                            Upsert("cloud_purchases", payload);
+                        }
+                        catch (Exception ex)
+                        {
+                            System.IO.File.AppendAllText(@"C:\Users\ma516\OneDrive\Desktop\sync_error.txt", "Purchase Sync Error (" + purchaseId + "): " + ex.ToString() + Environment.NewLine);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.IO.File.AppendAllText(@"C:\Users\ma516\OneDrive\Desktop\sync_error.txt", "Sync Error: " + ex.ToString() + Environment.NewLine);
+                }
+            });
+        }
+
+        public static void SyncMetricsAsync()
+        {
+            string key = LicenseManager.CurrentLicenseKey;
+            if (string.IsNullOrEmpty(key)) return;
+
+            Task.Run(() =>
+            {
+                try
+                {
+                    var db = new DbHelper();
+                    
+                    int totalMedicines = Convert.ToInt32(db.ExecuteScalar("SELECT COUNT(*) FROM Medicines"));
+                    int lowStockCount = Convert.ToInt32(db.ExecuteScalar("SELECT COUNT(*) FROM (SELECT m.MedicineID, COALESCE(SUM(s.Quantity), 0) as TotalStock, m.MinStock FROM Medicines m LEFT JOIN Stocks s ON m.MedicineID = s.MedicineID GROUP BY m.MedicineID) WHERE TotalStock <= MinStock"));
+                    int expiredCount = Convert.ToInt32(db.ExecuteScalar("SELECT COUNT(*) FROM Stocks WHERE ExpiryDate <= date('now') AND Quantity > 0"));
+                    double totalStockValue = Convert.ToDouble(db.ExecuteScalar("SELECT SUM(s.Quantity * m.PurchasePrice) FROM Stocks s JOIN Medicines m ON s.MedicineID = m.MedicineID WHERE s.Quantity > 0") ?? 0);
+                    
+                    var kpi = new Dictionary<string, object> {
+                        { "totalMedicines", totalMedicines },
+                        { "lowStockCount", lowStockCount },
+                        { "expiredCount", expiredCount },
+                        { "totalStockValue", totalStockValue }
+                    };
+
+                    var lowStockDt = db.GetDataTable("SELECT m.MedicineID, m.Name, m.GenericFormula, m.MinStock, COALESCE(SUM(s.Quantity), 0) as TotalStock FROM Medicines m LEFT JOIN Stocks s ON m.MedicineID = s.MedicineID GROUP BY m.MedicineID HAVING TotalStock <= m.MinStock ORDER BY TotalStock ASC LIMIT 50");
+                    var lowStock = new List<Dictionary<string, object>>();
+                    foreach(DataRow r in lowStockDt.Rows) {
+                        lowStock.Add(new Dictionary<string, object> {
+                            { "id", r["MedicineID"] }, { "name", r["Name"] }, { "generic", r["GenericFormula"] },
+                            { "stock", r["TotalStock"] }, { "min", r["MinStock"] }
+                        });
+                    }
+
+                    var expiredDt = db.GetDataTable("SELECT s.MedicineID, m.Name, m.GenericFormula, s.BatchNo, s.Quantity, s.ExpiryDate FROM Stocks s JOIN Medicines m ON s.MedicineID = m.MedicineID WHERE s.ExpiryDate <= date('now') AND s.Quantity > 0 ORDER BY s.ExpiryDate ASC LIMIT 50");
+                    var expired = new List<Dictionary<string, object>>();
+                    foreach(DataRow r in expiredDt.Rows) {
+                        expired.Add(new Dictionary<string, object> {
+                            { "id", r["MedicineID"] }, { "name", r["Name"] }, { "generic", r["GenericFormula"] },
+                            { "batch", r["BatchNo"] }, { "stock", r["Quantity"] }, 
+                            { "expiry", r["ExpiryDate"] }
+                        });
+                    }
+
+                    var payload = new Dictionary<string, object>
+                    {
+                        { "license_key", key },
+                        { "kpi_json", Json.Serialize(kpi) },
+                        { "low_stock_json", Json.Serialize(lowStock) },
+                        { "expired_json", Json.Serialize(expired) }
+                    };
+
+                    try
+                    {
+                        Upsert("cloud_metrics", payload);
+                    }
+                    catch (Exception ex)
+                    {
+                        System.IO.File.AppendAllText(@"C:\Users\ma516\OneDrive\Desktop\sync_error.txt", "Metrics API Error: " + ex.ToString() + Environment.NewLine);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.IO.File.AppendAllText(@"C:\Users\ma516\OneDrive\Desktop\sync_error.txt", "Metrics DB Error: " + ex.ToString() + Environment.NewLine);
+                }
+            });
+        }
+
         /// <summary>Upload a completed purchase to the cloud (fire-and-forget).</summary>
         public static void UploadPurchaseAsync(int purchaseId, string supplierName,
                                                 string invoiceNo, string purchaseDate,
